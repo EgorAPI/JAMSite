@@ -1,0 +1,11 @@
+/.env
+/vendor/
+/storage/logs/*.log
+/storage/cache/*
+/storage/tmp/*
+/public/uploads/portfolio/*
+!/public/uploads/portfolio/.gitkeep
+/public/uploads/slides/*
+!/public/uploads/slides/.gitkeep
+/public/uploads/services/*
+!/public/uploads/services/.gitkeep

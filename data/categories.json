@@ -1,0 +1,14 @@
+[
+    {
+        "id": "signs",
+        "title": "Вывески",
+        "active": true,
+        "sort": 10
+    },
+    {
+        "id": "banners",
+        "title": "Баннеры",
+        "active": true,
+        "sort": 20
+    }
+]

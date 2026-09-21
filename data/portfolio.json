@@ -1,0 +1,20 @@
+[
+    {
+        "id": "portfolio_001",
+        "title": "Световая вывеска",
+        "category": "signs",
+        "image": "/uploads/portfolio/portfolio_001.webp",
+        "featured": true,
+        "active": true,
+        "sort": 10
+    },
+        {
+        "id": "portfolio_002",
+        "title": "Баннер для магазина",
+        "category": "banners",
+        "image": "/uploads/portfolio/portfolio_002.webp",
+        "featured": false,
+        "active": true,
+        "sort": 20
+    }
+]
