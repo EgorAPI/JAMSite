@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use App\Repositories\Json\PortfolioRepository;
+use App\Repositories\Json\CategoryRepository;
+
 return [
     'GET' => [
         '/' => static function (array $app): void {
@@ -10,6 +13,108 @@ return [
             render(
                 'admin/dashboard',
                 ['title' => 'Джем Admin'],
+                'admin'
+            );
+        },
+        '/works' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $portfolio = new PortfolioRepository(
+                $app['config']['paths']['data'] . '/portfolio.json'
+            );
+            $categories = new CategoryRepository(
+                $app['config']['paths']['data'] . '/categories.json'
+            );
+
+            render(
+                'admin/works',
+                [
+                    'title' => 'Работы — Джем Admin',
+                    'works' => $portfolio->all(false),
+                    'categories' => $categories->all(false),
+                ],
+                'admin'
+            );
+        },
+        '/works/create' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $categories = new CategoryRepository(
+                $app['config']['paths']['data'] . '/categories.json'
+            );
+
+            render(
+                'admin/work-create',
+                [
+                    'title' => 'Добавить работу — Джем Admin',
+                    'categories' => $categories->all(true),
+                ],
+                'admin'
+            );
+        },
+        '/works/edit' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $id = trim((string) ($_GET['id'] ?? ''));
+
+            if ($id === '') {
+                http_response_code(400);
+
+                echo 'Не указан ID работы.';
+                return;
+            }
+
+            $portfolio = new PortfolioRepository(
+                $app['config']['paths']['data'] . '/portfolio.json'
+            );
+
+            $work = $portfolio->find($id);
+
+            if ($work === null) {
+                http_response_code(404);
+
+                echo 'Работа не найдена.';
+                return;
+            }
+
+            $categories = new CategoryRepository(
+                $app['config']['paths']['data'] . '/categories.json'
+            );
+
+            render(
+                'admin/work-edit',
+                [
+                    'title' => 'Редактировать работу — Джем Admin',
+                    'work' => $work,
+                    'categories' => $categories->all(true),
+                ],
+                'admin'
+            );
+        },
+        '/categories' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $categories = new CategoryRepository(
+                $app['config']['paths']['data'] . '/categories.json'
+            );
+
+            render(
+                'admin/categories',
+                [
+                    'title' => 'Категории — Джем Admin',
+                    'categories' => $categories->all(false),
+                ],
+                'admin'
+            );
+        },
+        '/categories/create' => static function (array $app): void {
+            admin_require_auth($app);
+
+            render(
+                'admin/category-create',
+                [
+                    'title' => 'Добавить категорию — Джем Admin',
+                ],
                 'admin'
             );
         },
@@ -143,6 +248,693 @@ return [
             session_destroy();
 
             header('Location: /admin/login');
+            exit;
+        },
+        '/works' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            $title = trim((string) ($_POST['title'] ?? ''));
+            $category = trim((string) ($_POST['category'] ?? ''));
+            $sort = (int) ($_POST['sort'] ?? 0);
+
+            if ($title === '' || $category === '') {
+                http_response_code(422);
+
+                echo 'Название и категория обязательны.';
+                return;
+            }
+
+            $portfolio = new PortfolioRepository(
+                $app['config']['paths']['data'] . '/portfolio.json'
+            );
+
+            if (
+                !isset($_FILES['image'])
+                || !is_array($_FILES['image'])
+                || ($_FILES['image']['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_NO_FILE
+            ) {
+                http_response_code(422);
+
+                echo 'Изображение обязательно.';
+                return;
+            }
+
+            if (($_FILES['image']['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
+                http_response_code(422);
+
+                echo 'Ошибка загрузки изображения.';
+                return;
+            }
+            $maxFileSize = 10 * 1024 * 1024;
+
+            if (($_FILES['image']['size'] ?? 0) > $maxFileSize) {
+                http_response_code(422);
+
+                echo 'Размер изображения не должен превышать 10 МБ.';
+                return;
+            }
+            $imagePath = '';
+
+                if (
+                    isset($_FILES['image'])
+                    && is_array($_FILES['image'])
+                    && ($_FILES['image']['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_OK
+                ) {
+                    $tmpName = (string) $_FILES['image']['tmp_name'];
+                    $imageInfo = getimagesize($tmpName);
+
+                    if ($imageInfo === false) {
+                        http_response_code(422);
+
+                        echo 'Не удалось определить параметры изображения.';
+                        return;
+                    }
+
+                    [$width, $height] = $imageInfo;
+
+                    if ($width > 6000 || $height > 6000) {
+                        http_response_code(422);
+
+                        echo 'Размер изображения не должен превышать 6000×6000 пикселей.';
+                        return;
+                    }
+                    $originalName = (string) $_FILES['image']['name'];
+
+                    $finfo = new finfo(FILEINFO_MIME_TYPE);
+                    $mimeType = $finfo->file($tmpName);
+
+                    $allowedTypes = [
+                        'image/jpeg' => 'jpg',
+                        'image/png' => 'png',
+                        'image/webp' => 'webp',
+                    ];
+
+                    if (!isset($allowedTypes[$mimeType])) {
+                        http_response_code(422);
+
+                        echo 'Допустимы только JPG, PNG и WebP.';
+                        return;
+                    }
+
+                    $extension = $allowedTypes[$mimeType];
+
+                    $fileName = bin2hex(random_bytes(8)) . '.webp';
+
+                    $uploadDir = $app['config']['paths']['uploads'] . '/portfolio';
+                    $destination = $uploadDir . '/' . $fileName;
+
+                    if (!is_dir($uploadDir)) {
+                        mkdir($uploadDir, 0775, true);
+                    }
+
+                    switch ($mimeType) {
+                        case 'image/jpeg':
+                            $sourceImage = imagecreatefromjpeg($tmpName);
+                            break;
+
+                        case 'image/png':
+                            $sourceImage = imagecreatefrompng($tmpName);
+                            break;
+
+                        case 'image/webp':
+                            $sourceImage = imagecreatefromwebp($tmpName);
+                            break;
+
+                        default:
+                            $sourceImage = false;
+                            break;
+                    }
+
+                    if ($sourceImage === false) {
+                        http_response_code(422);
+
+                        echo 'Не удалось обработать изображение.';
+                        return;
+                    }
+
+                    $maxWidth = 2000;
+                    $maxHeight = 2000;
+
+                    $sourceWidth = imagesx($sourceImage);
+                    $sourceHeight = imagesy($sourceImage);
+
+                    $targetWidth = $sourceWidth;
+                    $targetHeight = $sourceHeight;
+
+                    if ($sourceWidth > $maxWidth || $sourceHeight > $maxHeight) {
+                        $scale = min(
+                            $maxWidth / $sourceWidth,
+                            $maxHeight / $sourceHeight
+                        );
+
+                        $targetWidth = (int) round($sourceWidth * $scale);
+                        $targetHeight = (int) round($sourceHeight * $scale);
+
+                        $resizedImage = imagecreatetruecolor($targetWidth, $targetHeight);
+                        imagealphablending($resizedImage, false);
+                        imagesavealpha($resizedImage, true);
+
+                        $transparent = imagecolorallocatealpha(
+                            $resizedImage,
+                            0,
+                            0,
+                            0,
+                            127
+                        );
+
+                        imagefilledrectangle(
+                            $resizedImage,
+                            0,
+                            0,
+                            $targetWidth,
+                            $targetHeight,
+                            $transparent
+                        );
+
+                        imagecopyresampled(
+                            $resizedImage,
+                            $sourceImage,
+                            0,
+                            0,
+                            0,
+                            0,
+                            $targetWidth,
+                            $targetHeight,
+                            $sourceWidth,
+                            $sourceHeight
+                        );
+
+                        imagedestroy($sourceImage);
+
+                        $sourceImage = $resizedImage;
+                    }
+                    if (!imagewebp($sourceImage, $destination, 82)) {
+                        imagedestroy($sourceImage);
+
+                        http_response_code(500);
+
+                        echo 'Не удалось сохранить изображение.';
+                        return;
+                    }
+
+                    imagedestroy($sourceImage);
+
+                    $imagePath = '/uploads/portfolio/' . $fileName;
+                    $oldImagePath = (string) ($work['image'] ?? '');
+
+                    if ($oldImagePath !== '') {
+                        $oldImageFile = $app['config']['paths']['uploads']
+                            . str_replace('/uploads', '', $oldImagePath);
+                            var_dump($oldImagePath);
+                            var_dump($oldImageFile);
+                            var_dump(is_file($oldImageFile));
+                            exit;
+
+                        if (is_file($oldImageFile)) {
+                            unlink($oldImageFile);
+                        }
+                    }
+                }
+
+            $portfolio->create([
+                'id' => bin2hex(random_bytes(8)),
+                'title' => $title,
+                'category' => $category,
+                'image' => $imagePath,
+                'active' => isset($_POST['active']),
+                'featured' => isset($_POST['featured']),
+                'sort' => $sort,
+            ]);
+
+            $_SESSION['admin_flash'] = [
+                'type' => 'success',
+                'message' => 'Работа успешно добавлена.',
+            ];
+            header('Location: /admin/works');
+            exit;
+        },
+        '/works/update' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            $id = trim((string) ($_POST['id'] ?? ''));
+            $title = trim((string) ($_POST['title'] ?? ''));
+            $category = trim((string) ($_POST['category'] ?? ''));
+            $sort = (int) ($_POST['sort'] ?? 0);
+
+            if ($id === '' || $title === '' || $category === '') {
+                http_response_code(422);
+
+                echo 'ID, название и категория обязательны.';
+                return;
+            }
+
+            $portfolio = new PortfolioRepository(
+                $app['config']['paths']['data'] . '/portfolio.json'
+            );
+
+            $work = $portfolio->find($id);
+
+            if ($work === null) {
+                http_response_code(404);
+
+                echo 'Работа не найдена.';
+                return;
+            }
+
+            $imagePath = $work['image'] ?? '';
+            if (
+                isset($_FILES['image'])
+                && is_array($_FILES['image'])
+                && ($_FILES['image']['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_NO_FILE
+            ) {
+                if (($_FILES['image']['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
+                    http_response_code(422);
+
+                    echo 'Ошибка загрузки изображения.';
+                    return;
+                }
+
+                $maxFileSize = 10 * 1024 * 1024;
+
+                if (($_FILES['image']['size'] ?? 0) > $maxFileSize) {
+                    http_response_code(422);
+
+                    echo 'Размер изображения не должен превышать 10 МБ.';
+                    return;
+                }
+
+                $tmpName = (string) $_FILES['image']['tmp_name'];
+
+                $imageInfo = getimagesize($tmpName);
+
+                if ($imageInfo === false) {
+                    http_response_code(422);
+
+                    echo 'Не удалось определить параметры изображения.';
+                    return;
+                }
+
+                [$width, $height] = $imageInfo;
+
+                if ($width > 6000 || $height > 6000) {
+                    http_response_code(422);
+
+                    echo 'Размер изображения не должен превышать 6000×6000 пикселей.';
+                    return;
+                }
+
+                $finfo = new finfo(FILEINFO_MIME_TYPE);
+                $mimeType = $finfo->file($tmpName);
+
+                $allowedTypes = [
+                    'image/jpeg' => 'jpg',
+                    'image/png' => 'png',
+                    'image/webp' => 'webp',
+                ];
+
+                if (!isset($allowedTypes[$mimeType])) {
+                    http_response_code(422);
+
+                    echo 'Допустимы только JPG, PNG и WebP.';
+                    return;
+                }
+
+                $fileName = bin2hex(random_bytes(8)) . '.webp';
+
+                $uploadDir = $app['config']['paths']['uploads'] . '/portfolio';
+                $destination = $uploadDir . '/' . $fileName;
+
+                if (!is_dir($uploadDir)) {
+                    mkdir($uploadDir, 0775, true);
+                }
+
+                switch ($mimeType) {
+                    case 'image/jpeg':
+                        $sourceImage = imagecreatefromjpeg($tmpName);
+                        break;
+
+                    case 'image/png':
+                        $sourceImage = imagecreatefrompng($tmpName);
+                        break;
+
+                    case 'image/webp':
+                        $sourceImage = imagecreatefromwebp($tmpName);
+                        break;
+
+                    default:
+                        $sourceImage = false;
+                        break;
+                }
+
+                if ($sourceImage === false) {
+                    http_response_code(422);
+
+                    echo 'Не удалось обработать изображение.';
+                    return;
+                }
+
+                $maxWidth = 2000;
+                $maxHeight = 2000;
+
+                $sourceWidth = imagesx($sourceImage);
+                $sourceHeight = imagesy($sourceImage);
+
+                if ($sourceWidth > $maxWidth || $sourceHeight > $maxHeight) {
+                    $scale = min(
+                        $maxWidth / $sourceWidth,
+                        $maxHeight / $sourceHeight
+                    );
+
+                    $targetWidth = (int) round($sourceWidth * $scale);
+                    $targetHeight = (int) round($sourceHeight * $scale);
+
+                    $resizedImage = imagecreatetruecolor($targetWidth, $targetHeight);
+
+                    imagealphablending($resizedImage, false);
+                    imagesavealpha($resizedImage, true);
+
+                    $transparent = imagecolorallocatealpha(
+                        $resizedImage,
+                        0,
+                        0,
+                        0,
+                        127
+                    );
+
+                    imagefilledrectangle(
+                        $resizedImage,
+                        0,
+                        0,
+                        $targetWidth,
+                        $targetHeight,
+                        $transparent
+                    );
+
+                    imagecopyresampled(
+                        $resizedImage,
+                        $sourceImage,
+                        0,
+                        0,
+                        0,
+                        0,
+                        $targetWidth,
+                        $targetHeight,
+                        $sourceWidth,
+                        $sourceHeight
+                    );
+
+                    imagedestroy($sourceImage);
+
+                    $sourceImage = $resizedImage;
+                }
+
+                if (!imagewebp($sourceImage, $destination, 82)) {
+                    imagedestroy($sourceImage);
+
+                    http_response_code(500);
+
+                    echo 'Не удалось сохранить изображение.';
+                    return;
+                }
+
+                imagedestroy($sourceImage);
+
+                $imagePath = '/uploads/portfolio/' . $fileName;
+                $oldImagePath = (string) ($work['image'] ?? '');
+
+                if ($oldImagePath !== '') {
+                    $oldImageFile = $app['config']['paths']['uploads']
+                        . str_replace('/uploads', '', $oldImagePath);
+
+                    if (is_file($oldImageFile)) {
+                        unlink($oldImageFile);
+                    }
+                }
+
+            }
+
+            $portfolio->update($id, [
+                'title' => $title,
+                'category' => $category,
+                'image' => $imagePath,
+                'active' => isset($_POST['active']),
+                'featured' => isset($_POST['featured']),
+                'sort' => $sort,
+            ]);
+
+            $_SESSION['admin_flash'] = [
+                'type' => 'success',
+                'message' => 'Работа успешно обновлена.',
+            ];
+            header('Location: /admin/works');
+            exit;
+        },
+        '/works/delete' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            $id = trim((string) ($_POST['id'] ?? ''));
+
+            if ($id === '') {
+                http_response_code(422);
+
+                echo 'Не указан ID работы.';
+                return;
+            }
+
+            $portfolio = new PortfolioRepository(
+                $app['config']['paths']['data'] . '/portfolio.json'
+            );
+
+            $work = $portfolio->find($id);
+
+            if ($work === null) {
+                http_response_code(404);
+
+                echo 'Работа не найдена.';
+                return;
+            }
+
+            $imagePath = (string) ($work['image'] ?? '');
+
+            if ($imagePath !== '') {
+                $imageFile = $app['config']['paths']['uploads']
+                    . str_replace('/uploads', '', $imagePath);
+
+                if (is_file($imageFile)) {
+                    unlink($imageFile);
+                }
+            }
+
+            $portfolio->delete($id);
+
+            $_SESSION['admin_flash'] = [
+                'type' => 'success',
+                'message' => 'Работа успешно удалена.',
+            ];
+            header('Location: /admin/works');
+            exit;
+        },
+        '/categories' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            $title = trim((string) ($_POST['title'] ?? ''));
+
+            if ($title === '') {
+                http_response_code(422);
+
+                echo 'Название категории обязательно.';
+                return;
+            }
+
+            $categories = new CategoryRepository(
+                $app['config']['paths']['data'] . '/categories.json'
+            );
+
+            $categories->create([
+                'id' => bin2hex(random_bytes(6)),
+                'title' => $title,
+                'active' => true,
+                'sort' => 0,
+            ]);
+
+            header('Location: /admin/categories');
+            exit;
+        },
+        '/categories/update' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            $id = trim((string) ($_POST['id'] ?? ''));
+            $title = trim((string) ($_POST['title'] ?? ''));
+
+            if ($id === '' || $title === '') {
+                http_response_code(422);
+
+                echo 'ID и название категории обязательны.';
+                return;
+            }
+
+            $categories = new CategoryRepository(
+                $app['config']['paths']['data'] . '/categories.json'
+            );
+
+            $category = $categories->update($id, [
+                'title' => $title,
+            ]);
+
+            if ($category === null) {
+                http_response_code(404);
+
+                echo 'Категория не найдена.';
+                return;
+            }
+
+            header('Location: /admin/categories');
+            exit;
+        },
+        '/categories/toggle' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            $id = trim((string) ($_POST['id'] ?? ''));
+
+            if ($id === '') {
+                http_response_code(422);
+
+                echo 'Не указан ID категории.';
+                return;
+            }
+
+            $categories = new CategoryRepository(
+                $app['config']['paths']['data'] . '/categories.json'
+            );
+
+            $category = $categories->find($id);
+
+            if ($category === null) {
+                http_response_code(404);
+
+                echo 'Категория не найдена.';
+                return;
+            }
+
+            $categories->update($id, [
+                'active' => !empty($category['active']) ? false : true,
+            ]);
+
+            header('Location: /admin/categories');
+            exit;
+        },
+        '/categories/delete' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            $id = trim((string) ($_POST['id'] ?? ''));
+
+            if ($id === '') {
+                http_response_code(422);
+
+                echo 'Не указан ID категории.';
+                return;
+            }
+
+            $categories = new CategoryRepository(
+                $app['config']['paths']['data'] . '/categories.json'
+            );
+
+            $portfolio = new PortfolioRepository(
+                $app['config']['paths']['data'] . '/portfolio.json'
+            );
+
+            $category = $categories->find($id);
+
+            if ($category === null) {
+                http_response_code(404);
+
+                echo 'Категория не найдена.';
+                return;
+            }
+
+            foreach ($portfolio->all(false) as $work) {
+                if (($work['category'] ?? null) === $id) {
+                    $_SESSION['admin_flash'] = [
+                        'type' => 'danger',
+                        'message' => 'Нельзя удалить категорию, пока она используется в работах.',
+                    ];
+
+                    header('Location: /admin/categories');
+                    exit;
+                }
+            }
+
+            $categories->delete($id);
+
+            $_SESSION['admin_flash'] = [
+                'type' => 'success',
+                'message' => 'Категория успешно удалена.',
+            ];
+
+            header('Location: /admin/categories');
             exit;
         },
     ],

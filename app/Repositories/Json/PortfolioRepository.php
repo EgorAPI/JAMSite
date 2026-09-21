@@ -38,4 +38,45 @@ final class PortfolioRepository extends JsonRepository implements PortfolioRepos
 
         return null;
     }
+
+    public function create(array $data): array
+    {
+        $items = $this->all(false);
+
+        $item = [
+            'id' => $data['id'],
+            'title' => $data['title'],
+            'category' => $data['category'],
+            'image' => $data['image'],
+            'active' => (bool) ($data['active'] ?? false),
+            'featured' => (bool) ($data['featured'] ?? false),
+            'sort' => (int) ($data['sort'] ?? 0),
+        ];
+
+        $items[] = $item;
+
+        $this->write($items);
+
+        return $item;
+    }
+    public function update(string $id, array $data): ?array
+    {
+        $items = $this->all(false);
+
+        foreach ($items as $index => $item) {
+            if (($item['id'] ?? null) !== $id) {
+                continue;
+            }
+
+            $updatedItem = array_merge($item, $data);
+
+            $items[$index] = $updatedItem;
+
+            $this->write($items);
+
+            return $updatedItem;
+        }
+
+        return null;
+    }
 }

@@ -1,18 +1,27 @@
 [
     {
-        "id": "portfolio_001",
-        "title": "Световая вывеска",
-        "category": "signs",
-        "image": "/uploads/portfolio/portfolio_001.webp",
-        "featured": true,
+        "id": "bc8c5eee36810e34",
+        "title": "ывмывмывм",
+        "category": "banners",
+        "image": "\/uploads\/portfolio\/cd43b29a7b8c04e3.webp",
         "active": true,
-        "sort": 10
+        "featured": true,
+        "sort": 0
     },
-        {
+    {
+        "id": "b5a23d735d8972d7",
+        "title": "вымывм",
+        "category": "signs",
+        "image": "\/uploads\/portfolio\/8b98723b1fbbe586.webp",
+        "active": true,
+        "featured": false,
+        "sort": 0
+    },
+    {
         "id": "portfolio_002",
         "title": "Баннер для магазина",
         "category": "banners",
-        "image": "/uploads/portfolio/portfolio_002.webp",
+        "image": "\/uploads\/portfolio\/portfolio_002.webp",
         "featured": false,
         "active": true,
         "sort": 20
