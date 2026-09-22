@@ -46,17 +46,17 @@
             </a>
 
             <a
-                href="#"
-                class="admin-sidebar__link"
+                href="/admin/slides"
+                class="admin-sidebar__link <?= ($_SERVER['REQUEST_URI'] ?? '') === '/admin/slides' ? 'is-active' : '' ?>"
             >
                 Слайды
             </a>
             <div class="admin-sidebar__divider"></div>
 
             <a
-                href="#"
-                class="admin-sidebar__link"
-                >
+                href="/admin/settings"
+                class="admin-sidebar__link <?= ($_SERVER['REQUEST_URI'] ?? '') === '/admin/settings' ? 'is-active' : '' ?>"
+            >
                 Настройки
             </a>
         </nav>

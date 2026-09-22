@@ -430,7 +430,7 @@ body {
 
     overflow: hidden;
 
-    background: var(--jam-bg-soft);
+    background: var(--jam-bg);
 }
 
 .hero-media__image img {

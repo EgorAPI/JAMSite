@@ -1,32 +1,32 @@
 [
     {
-        "id": "slide_001",
-        "title": "Наружная реклама",
-        "subtitle": "От идеи и разработки макета до изготовления и монтажа",
-        "image": "/uploads/slides/yarko.webp",
-        "button_text": "Посмотреть работы",
-        "button_url": "/portfolio",
-        "active": true,
-        "sort_order": 10
-    },
-    {
         "id": "slide_002",
         "title": "Рекламные конструкции",
         "subtitle": "Изготовление заметной рекламы для бизнеса",
-        "image": "/uploads/slides/chetko.webp",
+        "image": "\/uploads\/slides\/chetko.webp",
         "button_text": "Посмотреть работы",
-        "button_url": "/portfolio",
+        "button_url": "\/portfolio",
         "active": true,
-        "sort_order": 20
+        "sort_order": 1
     },
     {
         "id": "slide_003",
         "title": "Реклама, которая работает",
         "subtitle": "Производство и монтаж рекламных решений в Абакане",
-        "image": "/uploads/slides/nadolgo.webp",
+        "image": "\/uploads\/slides\/nadolgo.webp",
         "button_text": "Посмотреть работы",
-        "button_url": "/portfolio",
+        "button_url": "\/portfolio",
         "active": true,
-        "sort_order": 30
+        "sort_order": 2
+    },
+    {
+        "id": "slide_001",
+        "title": "Наружная реклама",
+        "subtitle": "От идеи и разработки макета до изготовления и монтажа",
+        "image": "\/uploads\/slides\/yarko.webp",
+        "button_text": "Посмотреть работы",
+        "button_url": "\/portfolio",
+        "active": true,
+        "sort_order": 3
     }
 ]

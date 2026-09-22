@@ -1206,3 +1206,154 @@ body.admin-body {
     font-size: 0.85rem;
     font-weight: 600;
 }
+.admin-slides__table-wrap {
+    margin-top: 1.5rem;
+    overflow-x: auto;
+
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+
+    background: #ffffff;
+}
+
+.admin-slides__table {
+    min-width: 720px;
+    margin-bottom: 0;
+}
+
+.admin-slides__table thead th {
+    padding: 1rem 1.25rem;
+
+    border-bottom: 1px solid var(--admin-border);
+
+    color: var(--admin-muted);
+    background: #fafafa;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.admin-slides__table tbody td {
+    padding: 1rem 1.25rem;
+
+    border-bottom: 1px solid var(--admin-border);
+
+    color: var(--admin-text);
+
+    font-size: 0.92rem;
+    vertical-align: middle;
+}
+
+.admin-slides__table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.admin-slides__table tbody tr:hover {
+    background: #fcfcfc;
+}
+.admin-slides__upload {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+
+    background: #ffffff;
+}
+
+.admin-slides__upload-info {
+    margin-bottom: 1rem;
+}
+
+.admin-slides__upload-info strong {
+    display: block;
+
+    margin-bottom: 0.35rem;
+
+    color: var(--admin-text);
+
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.admin-slides__upload-info p {
+    margin: 0;
+
+    color: var(--admin-muted);
+
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.admin-slides__upload-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.admin-slides__upload-controls .form-control {
+    min-height: 44px;
+
+    border: 1px solid var(--admin-border);
+    border-radius: 10px;
+
+    font-size: 0.9rem;
+}
+
+.admin-slides__upload-controls .form-control:focus {
+    border-color: var(--admin-red);
+
+    box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.12);
+}
+
+.admin-slides__upload-controls .btn {
+    flex: 0 0 auto;
+
+    min-height: 44px;
+}
+
+@media (max-width: 767.98px) {
+    .admin-slides__upload-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-slides__upload-controls .btn {
+        width: 100%;
+    }
+}
+.admin-slide-sort-form {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-slide-sort-form__input {
+    width: 80px;
+    min-height: 40px;
+
+    border: 1px solid var(--admin-border);
+    border-radius: 8px;
+
+    font-size: 0.9rem;
+}
+
+.admin-slide-sort-form__input:focus {
+    border-color: var(--admin-red);
+
+    box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.12);
+}
+
+.admin-slide-sort-form__save {
+    min-height: 40px;
+
+    border: 1px solid var(--admin-border);
+    border-radius: 8px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}

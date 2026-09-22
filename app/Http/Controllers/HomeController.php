@@ -8,6 +8,7 @@ use App\Repositories\Json\CategoryRepository;
 use App\Repositories\Json\PortfolioRepository;
 use App\Repositories\Json\SlideRepository;
 use App\Services\PortfolioService;
+use App\Repositories\Json\SettingsRepository;
 
 final class HomeController
 {
@@ -29,6 +30,9 @@ final class HomeController
             $portfolio,
             $categories
         );
+        $settings = new SettingsRepository(
+            $app['config']['paths']['data'] . '/settings.json'
+        );
 
         $featuredPortfolioItems = $portfolioService->featured();
 
@@ -36,6 +40,7 @@ final class HomeController
             'title' => 'Рекламное агентство «Джем» — Абакан',
             'featuredPortfolioItems' => $featuredPortfolioItems,
             'slides' => $slides->all(),
+            'settings' => $settings->get(),
         ]);
     }
 }

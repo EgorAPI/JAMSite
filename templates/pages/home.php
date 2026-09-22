@@ -49,7 +49,7 @@
             <div class="hero-media__image">
                 <img
                     src="<?= htmlspecialchars($slide['image'], ENT_QUOTES, 'UTF-8') ?>"
-                    alt="<?= htmlspecialchars($slide['title'], ENT_QUOTES, 'UTF-8') ?>"
+                    alt="<?= htmlspecialchars((string) ($slide['title'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
                 >
             </div>
         </div>
@@ -402,25 +402,55 @@
 
                 <address class="mt-4">
                     <p>
-                        <strong>Рекламное агентство «Джем»</strong><br>
-                        г. Абакан
+                        <strong>
+                            <?= e($settings['company_name'] ?? 'Рекламное агентство «Джем»') ?>
+                        </strong>
                     </p>
 
-                    <p>
-                        Адрес будет добавлен позже
-                    </p>
+                    <?php if (!empty($settings['office_address'])): ?>
+                        <p>
+                            <strong>Офис:</strong><br>
+                            <?= e($settings['office_address']) ?>
+                        </p>
+                    <?php endif; ?>
 
-                    <p>
-                        <a href="tel:+7XXXXXXXXXX">
-                            +7 XXX XXX-XX-XX
-                        </a>
-                    </p>
+                    <?php if (!empty($settings['workshop_address'])): ?>
+                        <p>
+                            <strong>Производственный цех:</strong><br>
+                            <?= e($settings['workshop_address']) ?>
+                        </p>
+                    <?php endif; ?>
 
-                    <p>
-                        <a href="mailto:example@example.ru">
-                            example@example.ru
-                        </a>
-                    </p>
+                    <?php if (!empty($settings['phone_1'])): ?>
+                        <p>
+                            <a href="tel:<?= e(preg_replace('/[^0-9+]/', '', $settings['phone_1'])) ?>">
+                                <?= e($settings['phone_1']) ?>
+                            </a>
+                        </p>
+                    <?php endif; ?>
+
+                    <?php if (!empty($settings['phone_2'])): ?>
+                        <p>
+                            <a href="tel:<?= e(preg_replace('/[^0-9+]/', '', $settings['phone_2'])) ?>">
+                                <?= e($settings['phone_2']) ?>
+                            </a>
+                        </p>
+                    <?php endif; ?>
+
+                    <?php if (!empty($settings['email'])): ?>
+                        <p>
+                            <a href="mailto:<?= e($settings['email']) ?>">
+                                <?= e($settings['email']) ?>
+                            </a>
+                        </p>
+                    <?php endif; ?>
+
+                    <?php if (!empty($settings['working_hours'])): ?>
+                        <p>
+                            <strong>Режим работы:</strong><br>
+                            <?= e($settings['working_hours']) ?>
+                        </p>
+                    <?php endif; ?>
                 </address>
             </div>
 

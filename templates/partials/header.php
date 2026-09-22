@@ -46,9 +46,14 @@
                 </ul>
 
                 <div class="d-lg-flex align-items-lg-center gap-lg-3 ms-lg-4">
-                    <a class="site-header__phone" href="tel:+7XXXXXXXXXX">
-                        +7 XXX XXX-XX-XX
-                    </a>
+                    <?php if (!empty($settings['phone_1'])): ?>
+                        <a
+                            class="site-header__phone"
+                            href="tel:<?= e(preg_replace('/[^0-9+]/', '', $settings['phone_1'])) ?>"
+                        >
+                            <?= e($settings['phone_1']) ?>
+                        </a>
+                    <?php endif; ?>
 
                     <a class="btn-jam-header" href="/#contact">
                         Обсудить проект

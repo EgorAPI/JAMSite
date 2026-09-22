@@ -131,6 +131,38 @@ return [
                 'admin'
             );
         },
+        '/slides' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $slides = new \App\Repositories\Json\SlideRepository(
+                $app['config']['paths']['data'] . '/slides.json'
+            );
+
+            render(
+                'admin/slides',
+                [
+                    'title' => 'Слайды — Джем Admin',
+                    'slides' => $slides->all(false),
+                ],
+                'admin'
+            );
+        },
+        '/settings' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $settingsRepository = new \App\Repositories\Json\SettingsRepository(
+                $app['config']['paths']['data'] . '/settings.json'
+            );
+
+            render(
+                'admin/settings',
+                [
+                    'title' => 'Настройки — Джем Admin',
+                    'settings' => $settingsRepository->get(),
+                ],
+                'admin'
+            );
+        },
     ],
 
     'POST' => [
@@ -208,7 +240,6 @@ return [
 
             http_response_code(422);
 
-            http_response_code(422);
 
             render(
                 'admin/login',
@@ -454,10 +485,6 @@ return [
                     if ($oldImagePath !== '') {
                         $oldImageFile = $app['config']['paths']['uploads']
                             . str_replace('/uploads', '', $oldImagePath);
-                            var_dump($oldImagePath);
-                            var_dump($oldImageFile);
-                            var_dump(is_file($oldImageFile));
-                            exit;
 
                         if (is_file($oldImageFile)) {
                             unlink($oldImageFile);
@@ -935,6 +962,378 @@ return [
             ];
 
             header('Location: /admin/categories');
+            exit;
+        },
+        '/slides' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            if (
+                !isset($_FILES['image'])
+                || !is_array($_FILES['image'])
+                || ($_FILES['image']['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_NO_FILE
+            ) {
+                http_response_code(422);
+
+                echo 'Изображение обязательно.';
+                return;
+            }
+
+            if (($_FILES['image']['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
+                http_response_code(422);
+
+                echo 'Ошибка загрузки изображения.';
+                return;
+            }
+
+            $tmpName = (string) $_FILES['image']['tmp_name'];
+
+            $finfo = new finfo(FILEINFO_MIME_TYPE);
+            $mimeType = $finfo->file($tmpName);
+
+            $allowedTypes = [
+                'image/jpeg' => 'jpg',
+                'image/png' => 'png',
+                'image/webp' => 'webp',
+            ];
+
+            if (!isset($allowedTypes[$mimeType])) {
+                http_response_code(422);
+
+                echo 'Допустимы только JPG, PNG и WebP.';
+                return;
+            }
+            $maxFileSize = 10 * 1024 * 1024;
+
+            if (($_FILES['image']['size'] ?? 0) > $maxFileSize) {
+                http_response_code(422);
+
+                echo 'Размер изображения не должен превышать 10 МБ.';
+                return;
+            }
+
+            $imageInfo = getimagesize($tmpName);
+
+            if ($imageInfo === false) {
+                http_response_code(422);
+
+                echo 'Не удалось определить параметры изображения.';
+                return;
+            }
+
+            [$width, $height] = $imageInfo;
+
+            if ($width > 6000 || $height > 6000) {
+                http_response_code(422);
+
+                echo 'Размер изображения не должен превышать 6000×6000 пикселей.';
+                return;
+            }
+
+            $fileName = bin2hex(random_bytes(8)) . '.webp';
+
+            $uploadDir = $app['config']['paths']['uploads'] . '/slides';
+            $destination = $uploadDir . '/' . $fileName;
+
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0775, true);
+            }
+
+            switch ($mimeType) {
+                case 'image/jpeg':
+                    $sourceImage = imagecreatefromjpeg($tmpName);
+                    break;
+
+                case 'image/png':
+                    $sourceImage = imagecreatefrompng($tmpName);
+                    break;
+
+                case 'image/webp':
+                    $sourceImage = imagecreatefromwebp($tmpName);
+                    break;
+
+                default:
+                    $sourceImage = false;
+                    break;
+            }
+
+            if ($sourceImage === false) {
+                http_response_code(422);
+
+                echo 'Не удалось обработать изображение.';
+                return;
+            }
+
+            $targetWidth = 1600;
+            $targetHeight = 1280;
+
+            $sourceWidth = imagesx($sourceImage);
+            $sourceHeight = imagesy($sourceImage);
+
+            $targetRatio = $targetWidth / $targetHeight;
+            $sourceRatio = $sourceWidth / $sourceHeight;
+
+            $cropX = 0;
+            $cropY = 0;
+            $cropWidth = $sourceWidth;
+            $cropHeight = $sourceHeight;
+
+            if ($sourceRatio > $targetRatio) {
+                // Изображение слишком широкое — обрезаем по бокам.
+                $cropWidth = (int) round($sourceHeight * $targetRatio);
+                $cropX = (int) round(($sourceWidth - $cropWidth) / 2);
+            } elseif ($sourceRatio < $targetRatio) {
+                // Изображение слишком высокое — обрезаем сверху и снизу.
+                $cropHeight = (int) round($sourceWidth / $targetRatio);
+                $cropY = (int) round(($sourceHeight - $cropHeight) / 2);
+            }
+
+            $resizedImage = imagecreatetruecolor(
+                $targetWidth,
+                $targetHeight
+            );
+
+            /* Сохраняем прозрачность PNG/WebP */
+            imagealphablending($resizedImage, false);
+            imagesavealpha($resizedImage, true);
+
+            $transparent = imagecolorallocatealpha(
+                $resizedImage,
+                0,
+                0,
+                0,
+                127
+            );
+
+            imagefilledrectangle(
+                $resizedImage,
+                0,
+                0,
+                $targetWidth,
+                $targetHeight,
+                $transparent
+            );
+
+            imagecopyresampled(
+                $resizedImage,
+                $sourceImage,
+                0,
+                0,
+                $cropX,
+                $cropY,
+                $targetWidth,
+                $targetHeight,
+                $cropWidth,
+                $cropHeight
+            );
+
+            imagedestroy($sourceImage);
+
+            if (!imagewebp($resizedImage, $destination, 82)) {
+                imagedestroy($resizedImage);
+
+                http_response_code(500);
+
+                echo 'Не удалось сохранить изображение.';
+                return;
+            }
+
+            imagedestroy($resizedImage);
+
+            $imagePath = '/uploads/slides/' . $fileName;
+
+            $slides = new \App\Repositories\Json\SlideRepository(
+                $app['config']['paths']['data'] . '/slides.json'
+            );
+
+            $slides->create([
+                'id' => bin2hex(random_bytes(8)),
+                'image' => $imagePath,
+                'active' => true,
+                'sort_order' => 0,
+            ]);
+            $_SESSION['admin_flash'] = [
+                'type' => 'success',
+                'message' => 'Слайд успешно добавлен.',
+            ];
+            header('Location: /admin/slides');
+            exit;
+        },
+        '/slides/toggle' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            $id = trim((string) ($_POST['id'] ?? ''));
+
+            if ($id === '') {
+                http_response_code(422);
+
+                echo 'Не указан ID слайда.';
+                return;
+            }
+
+            $slides = new \App\Repositories\Json\SlideRepository(
+                $app['config']['paths']['data'] . '/slides.json'
+            );
+
+            $slide = $slides->find($id);
+
+            if ($slide === null) {
+                http_response_code(404);
+
+                echo 'Слайд не найден.';
+                return;
+            }
+
+            $slides->update($id, [
+                'active' => !empty($slide['active']) ? false : true,
+            ]);
+
+            header('Location: /admin/slides');
+            exit;
+        },
+        '/slides/sort' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            $id = trim((string) ($_POST['id'] ?? ''));
+            $sortOrder = (int) ($_POST['sort_order'] ?? 0);
+
+            if ($id === '') {
+                http_response_code(422);
+
+                echo 'Не указан ID слайда.';
+                return;
+            }
+
+            $slides = new \App\Repositories\Json\SlideRepository(
+                $app['config']['paths']['data'] . '/slides.json'
+            );
+
+            $slide = $slides->update($id, [
+                'sort_order' => $sortOrder,
+            ]);
+
+            if ($slide === null) {
+                http_response_code(404);
+
+                echo 'Слайд не найден.';
+                return;
+            }
+
+            header('Location: /admin/slides');
+            exit;
+        },
+        '/slides/delete' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            $id = trim((string) ($_POST['id'] ?? ''));
+
+            if ($id === '') {
+                http_response_code(422);
+
+                echo 'Не указан ID слайда.';
+                return;
+            }
+
+            $slides = new \App\Repositories\Json\SlideRepository(
+                $app['config']['paths']['data'] . '/slides.json'
+            );
+
+            $slide = $slides->find($id);
+
+            if ($slide === null) {
+                http_response_code(404);
+
+                echo 'Слайд не найден.';
+                return;
+            }
+
+            $imagePath = (string) ($slide['image'] ?? '');
+
+            if ($imagePath !== '') {
+                $imageFile = $app['config']['paths']['uploads']
+                    . str_replace('/uploads', '', $imagePath);
+
+                if (is_file($imageFile)) {
+                    unlink($imageFile);
+                }
+            }
+
+            $slides->delete($id);
+            $_SESSION['admin_flash'] = [
+                'type' => 'success',
+                'message' => 'Слайд успешно удалён.',
+            ];
+
+            header('Location: /admin/slides');
+            exit;
+        },
+        '/settings' => static function (array $app): void {
+            admin_require_auth($app);
+
+            $csrfToken = $_POST['_csrf'] ?? null;
+
+            if (!csrf_validate(is_string($csrfToken) ? $csrfToken : null)) {
+                http_response_code(419);
+
+                echo 'Недействительный CSRF-токен.';
+                return;
+            }
+
+            $settingsRepository = new \App\Repositories\Json\SettingsRepository(
+                $app['config']['paths']['data'] . '/settings.json'
+            );
+
+            $settingsRepository->update([
+                'company_name' => trim((string) ($_POST['company_name'] ?? '')),
+                'phone_1' => trim((string) ($_POST['phone_1'] ?? '')),
+                'phone_2' => trim((string) ($_POST['phone_2'] ?? '')),
+                'email' => trim((string) ($_POST['email'] ?? '')),
+                'office_address' => trim((string) ($_POST['office_address'] ?? '')),
+                'workshop_address' => trim((string) ($_POST['workshop_address'] ?? '')),
+                'working_hours' => trim((string) ($_POST['working_hours'] ?? '')),
+            ]);
+
+            $_SESSION['admin_flash'] = [
+                'type' => 'success',
+                'message' => 'Настройки успешно сохранены.',
+            ];
+
+            header('Location: /admin/settings');
             exit;
         },
     ],

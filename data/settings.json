@@ -1,9 +1,9 @@
 {
   "company_name": "Рекламное агентство «Джем»",
-  "city": "Абакан",
   "phone_1": "",
   "phone_2": "",
   "email": "",
-  "address": "",
+  "office_address": "",
+  "workshop_address": "",
   "working_hours": ""
 }
