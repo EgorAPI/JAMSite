@@ -6,7 +6,7 @@ return [
     'name' => 'Рекламное агентство «Джем»',
     'env' => getenv('APP_ENV') ?: 'production',
     'debug' => filter_var(getenv('APP_DEBUG') ?: false, FILTER_VALIDATE_BOOL),
-    'url' => rtrim(getenv('APP_URL') ?: '', '/'),
+    'url' => rtrim($_ENV['APP_URL'] ?? '', '/'),
     'timezone' => getenv('APP_TIMEZONE') ?: 'Asia/Krasnoyarsk',
     'session' => [
         'name' => 'jem_session',

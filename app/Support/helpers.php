@@ -29,7 +29,15 @@ function render(string $template, array $data = [], string $layout = 'main'): vo
 function abort404(): never
 {
     http_response_code(404);
-    render('pages/404', ['title' => 'Страница не найдена']);
+
+    render(
+        'pages/404',
+        [
+            'title' => 'Страница не найдена',
+            'robots' => 'noindex, nofollow',
+        ]
+    );
+
     exit;
 }
 
@@ -128,4 +136,42 @@ function admin_clear_login_attempts(): void
         $_SESSION['admin_login_attempts'],
         $_SESSION['admin_last_failed_login']
     );
+}
+
+function build_local_business_schema(array $app, array $settings): array
+{
+    $schema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'LocalBusiness',
+        'name' => $settings['company_name'] ?? 'Рекламное агентство «Джем»',
+        'description' => 'Рекламное агентство «Джем» в Абакане занимается изготовлением наружной рекламы, вывесок, баннеров, рекламных конструкций и брендированием автомобилей.',
+        'url' => $app['config']['url'],
+        'logo' => $app['config']['url'] . '/assets/images/logo/logo.webp',
+        'areaServed' => [
+            [
+                '@type' => 'City',
+                'name' => 'Абакан',
+            ],
+            [
+                '@type' => 'AdministrativeArea',
+                'name' => 'Республика Хакасия',
+            ],
+        ],
+        'address' => [
+            '@type' => 'PostalAddress',
+            'addressLocality' => 'Абакан',
+            'addressRegion' => 'Республика Хакасия',
+            'addressCountry' => 'RU',
+        ],
+    ];
+
+    if (!empty($settings['phone_1'])) {
+        $schema['telephone'] = $settings['phone_1'];
+    }
+
+    if (!empty($settings['email'])) {
+        $schema['email'] = $settings['email'];
+    }
+
+    return $schema;
 }

@@ -36,11 +36,25 @@ final class HomeController
 
         $featuredPortfolioItems = $portfolioService->featured();
 
+        $settingsData = $settings->get();
+        $localBusinessSchema = build_local_business_schema(
+            $app,
+            $settingsData
+        );
+
+
         render('pages/home', [
-            'title' => 'Рекламное агентство «Джем» — Абакан',
+            'title' => 'Наружная реклама в Абакане — рекламное агентство «Джем»',
+            'metaDescription' => 'Рекламное агентство «Джем» в Абакане: наружная реклама, вывески, баннеры, брендирование автомобилей, печать и изготовление рекламных конструкций.',
+            'canonical' => $app['config']['url'] . '/',
+            'ogTitle' => 'Наружная реклама в Абакане — рекламное агентство «Джем»',
+            'ogDescription' => 'Рекламное агентство «Джем» в Абакане: наружная реклама, вывески, баннеры, брендирование автомобилей, печать и изготовление рекламных конструкций.',
+            'ogUrl' => $app['config']['url'] . '/',
+            'ogImage' => $app['config']['url'] . '/assets/images/logo/logo.webp',
             'featuredPortfolioItems' => $featuredPortfolioItems,
             'slides' => $slides->all(),
-            'settings' => $settings->get(),
+            'settings' => $settingsData,
+            'localBusinessSchema' => $localBusinessSchema,
         ]);
     }
 }

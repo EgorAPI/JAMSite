@@ -29,6 +29,7 @@ require_once $root . '/app/Support/helpers.php';
 $config = require $root . '/config/app.php';
 $config['mail'] = require $root . '/config/mail.php';
 $config['security'] = require $root . '/config/security.php';
+$config['analytics'] = require $root . '/config/analytics.php';
 
 date_default_timezone_set($config['timezone']);
 

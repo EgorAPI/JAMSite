@@ -1,9 +1,9 @@
 {
-  "company_name": "Рекламное агентство «Джем»",
-  "phone_1": "",
-  "phone_2": "",
-  "email": "",
-  "office_address": "",
-  "workshop_address": "",
-  "working_hours": ""
+    "company_name": "Рекламное агентство «Джем»",
+    "phone_1": "+7 (3902) 22-34-33",
+    "phone_2": "",
+    "email": "mail@jam-reklama.ru",
+    "office_address": "г. Абакан, пр. Ленина 59",
+    "workshop_address": "г. Абакан, ул. Заводская 3П",
+    "working_hours": "9.00-18.00"
 }

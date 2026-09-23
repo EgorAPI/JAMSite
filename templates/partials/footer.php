@@ -56,17 +56,25 @@
                     </h2>
 
                     <div class="site-footer__contacts">
-                        <a href="tel:+7XXXXXXXXXX">
-                            +7 XXX XXX-XX-XX
-                        </a>
 
-                        <a href="mailto:example@example.ru">
-                            example@example.ru
-                        </a>
+                        <?php if (!empty($settings['phone_1'])): ?>
+                            <a href="tel:<?= e(preg_replace('/[^0-9+]/', '', $settings['phone_1'])) ?>">
+                                <?= e($settings['phone_1']) ?>
+                            </a>
+                        <?php endif; ?>
 
-                        <p>
-                            г. Абакан
-                        </p>
+                        <?php if (!empty($settings['email'])): ?>
+                            <a href="mailto:<?= e($settings['email']) ?>">
+                                <?= e($settings['email']) ?>
+                            </a>
+                        <?php endif; ?>
+
+                        <?php if (!empty($settings['office_address'])): ?>
+                            <p>
+                                <?= e($settings['office_address']) ?>
+                            </p>
+                        <?php endif; ?>
+
                     </div>
                 </div>
 
