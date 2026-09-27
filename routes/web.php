@@ -5,11 +5,13 @@ declare(strict_types=1);
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ContactRequestController;
+use App\Http\Controllers\StructureController;
 
 return [
     'GET' => [
         '/' => HomeController::class,
         '/portfolio' => PortfolioController::class,
+        '/structures' => StructureController::class,
         '/contacts' => static fn (array $app) => render('pages/contacts', ['title' => 'Контакты — «Джем»']),
         '/privacy' => static fn (array $app) => render(
             'pages/privacy',

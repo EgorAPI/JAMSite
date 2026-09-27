@@ -9,3 +9,8 @@
 !/public/uploads/slides/.gitkeep
 /public/uploads/services/*
 !/public/uploads/services/.gitkeep
+/public/uploads/structures/*
+!/public/uploads/structures/.gitkeep
+
+/data/backups/*
+!/data/backups/.gitkeep

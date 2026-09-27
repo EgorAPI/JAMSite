@@ -51,6 +51,16 @@
             >
                 Слайды
             </a>
+
+            <a
+                href="/admin/structures"
+                class="admin-sidebar__link <?= str_starts_with(
+                    parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?: '',
+                    '/admin/structures'
+                ) ? 'is-active' : '' ?>"
+            >
+                Конструкции
+            </a>
             <div class="admin-sidebar__divider"></div>
 
             <a

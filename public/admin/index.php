@@ -3,7 +3,16 @@
 declare(strict_types=1);
 
 $app = require dirname(__DIR__, 2) . '/app/bootstrap.php';
+
 $routes = require dirname(__DIR__, 2) . '/routes/admin.php';
+$structureRoutes = require dirname(__DIR__, 2) . '/routes/admin/structures.php';
+
+foreach ($structureRoutes as $method => $methodRoutes) {
+    $routes[$method] = array_merge(
+        $routes[$method] ?? [],
+        $methodRoutes
+    );
+}
 
 $method = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
 $uriPath = parse_url($_SERVER['REQUEST_URI'] ?? '/admin', PHP_URL_PATH) ?: '/admin';

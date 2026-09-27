@@ -1,0 +1,4267 @@
+[
+    {
+        "id": "str_d6b5a37d3819d8b1",
+        "number": "57",
+        "type": "billboard",
+        "location_description": "ул. Абаканская, в 60м перед мостом чз р.Абакан (выезд из города Абакана)",
+        "latitude": 53.713299,
+        "longitude": 91.482528,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_fe9e133b583cdc6c",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_45b92c8b84ffbc5b",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_74abfc88ae904bac",
+        "number": "001",
+        "type": "billboard",
+        "location_description": "ул.Авиаторов, в 150 метрах от Дружбы Народов 47 Б",
+        "latitude": 53.744751,
+        "longitude": 91.415036,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_cbd72547996e7752",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_3b2d32f3606eddfd",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_fd49a7bdc3f75f50",
+        "number": "002",
+        "type": "billboard",
+        "location_description": "ул.Авиаторов, нечетная сторона, напротив дома № 2",
+        "latitude": 53.737289,
+        "longitude": 91.413109,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_6bd676190bad032f",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_7d8afdb796983628",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_e410ad255f63a047",
+        "number": "006",
+        "type": "billboard",
+        "location_description": "ул. Авиаторов, нечетная сторона, напротив земельного участка №6",
+        "latitude": 53.738651,
+        "longitude": 91.413014,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_8f6a58ece024d6b5",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_831c04c537778628",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_61f621f0538ed0b9",
+        "number": "007",
+        "type": "billboard",
+        "location_description": "ул. Авиаторов, нечетная сторона, напротив земельного участка № 3",
+        "latitude": 53.738173,
+        "longitude": 91.413036,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_83b7454fc62ecf4d",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_362dfdab9085a9d8",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_6d50c526da349744",
+        "number": "207",
+        "type": "billboard",
+        "location_description": "ул. Торосова, восточнее жилого дома № 15",
+        "latitude": 53.740875,
+        "longitude": 91.423155,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_c3d0530cc89df9dc",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_11b6a8867cde6ea8",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_2a4ee84ffafbd6f8",
+        "number": "206",
+        "type": "billboard",
+        "location_description": "ул. Торосова, южнее жилого дома № 15",
+        "latitude": 53.740052,
+        "longitude": 91.42212,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_ac857f52b9235229",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_039316c84459a5b1",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_f35b2a4f29b84d0e",
+        "number": "008",
+        "type": "billboard",
+        "location_description": "ул. Некрасова, по чётной стороне, в районе д. № 26 (ул. Тельмана)",
+        "latitude": 53.728663,
+        "longitude": 91.419278,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_25e0e0ee8d9d4dbe",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_aa601067de8df06a",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_737aa944206a5753",
+        "number": "009",
+        "type": "billboard",
+        "location_description": "ул. Некрасова, по чётной стороне, в районе д. № 24 А (ул. Кирова напротив маг-н \"Командор\")",
+        "latitude": 53.727417,
+        "longitude": 91.421304,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_19f36bd049a1e00e",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_7d62497f8a773ce0",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_a5027a50ee7fda93",
+        "number": "297",
+        "type": "billboard",
+        "location_description": "ул.Некрасова, в районе жилого дома 6 (за надземным пешеходных переходом)",
+        "latitude": 53.716517,
+        "longitude": 91.426016,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_10144c255e6c2a77",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_1ba83748062751b7",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_f9142811c9a7f832",
+        "number": "003",
+        "type": "prismatron",
+        "location_description": "Призматрон ул. Некрасова, по чётной стороне, в районе д. № 12",
+        "latitude": 53.720995,
+        "longitude": 91.424767,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_c8538916c96b483b",
+                "name": "Баннерная сторона",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_b86628f6261155af",
+                "name": "Сменяющаяся сторона",
+                "kind": "dynamic",
+                "image": null
+            }
+        ]
+    },
+    {
+        "id": "str_52f3b24d06c7cfd9",
+        "number": "320",
+        "type": "prismatron",
+        "location_description": "Призматрон г. Абакан ул. Ленина, в районе пересечения с ул. Вяткина(ул. Ленина 76А) .",
+        "latitude": 53.723055,
+        "longitude": 91.447861,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_5f91b1b080d3d5bf",
+                "name": "Баннерная сторона",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_a45797e408ea182c",
+                "name": "Сменяющаяся сторона",
+                "kind": "dynamic",
+                "image": null
+            }
+        ]
+    },
+    {
+        "id": "str_b9f81f57761262cc",
+        "number": "010",
+        "type": "billboard",
+        "location_description": "ул. Пушкина, в районе дома № 155",
+        "latitude": 53.716246,
+        "longitude": 91.434925,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_76809a090bea8068",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_46ee8e5ea44d7f49",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_7ae7e117dee893c8",
+        "number": "128",
+        "type": "billboard",
+        "location_description": "ул. Кирова со ст. ул. Чкалова (стадион) №1",
+        "latitude": 53.728146,
+        "longitude": 91.450704,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_4e7ffd144704bca2",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_c9d30d5d264e7fdf",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_1dc683dbd419b732",
+        "number": "168",
+        "type": "billboard",
+        "location_description": "ул. Кирова со ст. ул. Вяткина (стадион) №2",
+        "latitude": 53.727864,
+        "longitude": 91.447833,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_436396bbb71f2980",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_89793db53949918e",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_e71edea13da4437e",
+        "number": "035",
+        "type": "billboard",
+        "location_description": "Пересечение ул.Ярыгина и ул.Крылова",
+        "latitude": 53.732899,
+        "longitude": 91.426883,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_7899bc36321578c6",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_1bd6008c6d5a8721",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_1610fb7f3de15c0e",
+        "number": "033",
+        "type": "billboard",
+        "location_description": "ул.Ярыгина чётная сторона, в 150 м от ул. Тельмана",
+        "latitude": 53.731254,
+        "longitude": 91.429787,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_aaf0c2a096793f06",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_d81988fe72ff6986",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_41b42a262f62e838",
+        "number": "032",
+        "type": "billboard",
+        "location_description": "ул. Крылова, в районе жилого дома № 85",
+        "latitude": 53.731918,
+        "longitude": 91.415817,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_2cc546fc89d4e111",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_93f0f3cacd807105",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_88efc9f58bfd078b",
+        "number": "004",
+        "type": "billboard",
+        "location_description": "ул. Крылова с юго-западной стороны Арбитражного суда РХ",
+        "latitude": 53.735414,
+        "longitude": 91.443425,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_69949b775462d5ae",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_0a3ad95830bae5ca",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_8d1574efe91ca4ff",
+        "number": "024",
+        "type": "billboard",
+        "location_description": "ул.Катанова, район СК \"Абакан\"",
+        "latitude": 53.722101,
+        "longitude": 91.47189,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_73f39703509ebd35",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_c8e5d5ae90b0058a",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_67c5d64b37c0e67e",
+        "number": "099",
+        "type": "billboard",
+        "location_description": "западнее земельного участка по ул. Катанова 12 (Китайский рынок)",
+        "latitude": 53.728251,
+        "longitude": 91.47108,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_0bf93588035b6561",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_91030e1d04418799",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_7e0f94845d136792",
+        "number": "106",
+        "type": "billboard",
+        "location_description": "пересечение ул.Пушкина\/Итыгина в р-не д. № 221",
+        "latitude": 53.71336,
+        "longitude": 91.407194,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_4e1ddc40033b66eb",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_f0b6e9d185cc3084",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_3f95a4d05bf23796",
+        "number": "186",
+        "type": "billboard",
+        "location_description": "ул. Аскизская, в районе земельного участка № 242",
+        "latitude": 53.688253,
+        "longitude": 91.390506,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_b7ab8b7d0d36cde8",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_aad59ad06c7265ac",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_e3433d288c5b7500",
+        "number": "155",
+        "type": "billboard",
+        "location_description": "ул. Аскизская, не чётная сторона, в районе дома 201 (въезд в город)",
+        "latitude": 53.693435,
+        "longitude": 91.404582,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_6bbfc50b2c3d91b9",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_5fcd9812f81e87d9",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_19b98bc5f6bd4c19",
+        "number": "098",
+        "type": "billboard",
+        "location_description": "ул. Аскизская, в районе дома № 157(со стороны дома № 155)",
+        "latitude": 53.698493,
+        "longitude": 91.417328,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_627a250c9abaec7f",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_06c814ff95834570",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_1cf3904c71b9a0da",
+        "number": "095",
+        "type": "billboard",
+        "location_description": "ул. Павших Коммунаров в районе д 95",
+        "latitude": 53.711792,
+        "longitude": 91.461473,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_93422d6f071e9a1e",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_e9505322f87c8a9f",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_de5b57963a9c841e",
+        "number": "119",
+        "type": "billboard",
+        "location_description": "ул. Павших Коммунаров в районе д.119",
+        "latitude": 53.711321,
+        "longitude": 91.456934,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_c1028e1c535140d7",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_c9180123bd20ae02",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_b48fb395eb2bb13b",
+        "number": "122",
+        "type": "billboard",
+        "location_description": "ул. Павших Коммунаров в районе д. 122",
+        "latitude": 53.711411,
+        "longitude": 91.455428,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_cdece59e956fba44",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_844d6f5826561188",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_0d863a8ac0f1e86b",
+        "number": "401",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №1",
+        "latitude": 53.745922,
+        "longitude": 91.409899,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_e43a70318fbda0ab",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_849aa1c42a84a678",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_dffe5b5a7d4046e5",
+        "number": "402",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №2",
+        "latitude": 53.744668,
+        "longitude": 91.409113,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_c4414759ef539e97",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_19031343f6ae4ab1",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_6cd49f7449ae0733",
+        "number": "403",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №3",
+        "latitude": 53.738061,
+        "longitude": 91.4073,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_655a2c01c30d5cc4",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_5cb2a4ae690b5ec5",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_ad186ae8a2b058ed",
+        "number": "404",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №4",
+        "latitude": 53.738098,
+        "longitude": 91.406492,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_9d3dd37381fd6082",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_e335df2721a8aee1",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_e7959eed4ff78936",
+        "number": "405",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №5",
+        "latitude": 53.737217,
+        "longitude": 91.406122,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_ad56f3fab75e0c47",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_1a3eaa4208fd4c0a",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_b1ccbc58701d11e2",
+        "number": "406",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №6",
+        "latitude": 53.736271,
+        "longitude": 91.406581,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_6c657b2027c336b4",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_7ae456355fb197fe",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_630f0bb4953d6d1f",
+        "number": "407",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №7",
+        "latitude": 53.744274,
+        "longitude": 91.409711,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_5de0eb7372dfbb65",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_faf4ca6c4744aaeb",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_1a9187245dfe2c1c",
+        "number": "408",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №8",
+        "latitude": 53.743361,
+        "longitude": 91.409376,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_a68c4eb68f1b85aa",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_1694f22956717fc2",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_1153706f794ef64a",
+        "number": "409",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №9",
+        "latitude": 53.739475,
+        "longitude": 91.407785,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_cf81e96ed2ba29c1",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_4da42a7e0725ddf1",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_41b47ca0338ab22f",
+        "number": "410",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №10",
+        "latitude": 53.738061,
+        "longitude": 91.4073,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_f10875d4b39b6d11",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_252cf99332dfc8e4",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_d4056b2acae3d96d",
+        "number": "411",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №11",
+        "latitude": 53.737152,
+        "longitude": 91.406921,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_6439acf34884d6a0",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_956e428991ef28ea",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_4e96867310068e4f",
+        "number": "412",
+        "type": "billboard",
+        "location_description": "Въезд в город, ул.Итыгина, м\/у кольцом Др.Народов и кольцом ул.Крылова (МЧС) справа №12",
+        "latitude": 53.736271,
+        "longitude": 91.406581,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_d59288435aa8766d",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_78171878d2367261",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_9b4eb9cb8aeace9f",
+        "number": "250",
+        "type": "brandmauer",
+        "location_description": "Щетинкина, 75, со стороны Др.Народов (5*12) (ЗАГС)",
+        "latitude": 53.734596,
+        "longitude": 91.439471,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_cd26bf3eac73d579",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_020f554fbcc4c48c",
+        "number": "251",
+        "type": "brandmauer",
+        "location_description": "Щетинкина, 36 (4*18)",
+        "latitude": 53.734596,
+        "longitude": 91.439471,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_b84289c676537959",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_58ed5e1bf03ef148",
+        "number": "253",
+        "type": "brandmauer",
+        "location_description": "Ул.Дружбы Народов, 20 (9*15)",
+        "latitude": 53.738313,
+        "longitude": 91.434051,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_091be9ccf9dac3c3",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_9e62411a1c47cda5",
+        "number": "172",
+        "type": "pillar",
+        "location_description": "ул.Крылова, ТЦ \"Европа\" слева от крыльца, №1",
+        "latitude": 53.735978,
+        "longitude": 91.445874,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_86ce09d1138ef317",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_a83266f29d13053a",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_c0d9143ca15d95e5",
+                "name": "Сторона C",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_254aa2a0c54d55f9",
+        "number": "173",
+        "type": "pillar",
+        "location_description": "ул.Крылова, ТЦ \"Европа\" справа от крыльца, №2",
+        "latitude": 53.736083,
+        "longitude": 91.446962,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_b9b0a65aebc3d8f7",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_f7ffe592e782965e",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_4392646a38d07531",
+                "name": "Сторона C",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_abd6d338f6dc0468",
+        "number": "174",
+        "type": "pillar",
+        "location_description": "ул. Щетинкина, возле Драмтеатра, 1",
+        "latitude": 53.720774,
+        "longitude": 91.444391,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_385e3c8191e7012a",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_191a9d02123a6afc",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_1bbb3b09f79a1552",
+                "name": "Сторона C",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_c389bd6fa67a2363",
+        "number": "8",
+        "type": "lightbox",
+        "location_description": "ТЦ \"Европа\" №1",
+        "latitude": 53.736441,
+        "longitude": 91.446477,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_c79fe477e1cef0d3",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_6b04059766ee7a5c",
+        "number": "200",
+        "type": "cityscroller",
+        "location_description": "Проспект Ленина 59, со стороны дома № 23 по ул. Вяткина.",
+        "latitude": 53.722177,
+        "longitude": 91.447466,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_12154953221ff63f",
+                "name": "Сторона A",
+                "kind": "dynamic",
+                "image": null
+            },
+            {
+                "id": "surf_45d2e653ec0b29a9",
+                "name": "Сторона B",
+                "kind": "dynamic",
+                "image": null
+            }
+        ]
+    },
+    {
+        "id": "str_c4bbeb81f0ee3f03",
+        "number": "201",
+        "type": "cityscroller",
+        "location_description": "Проспект Ленина 59, слева от крыльца.",
+        "latitude": 53.722391,
+        "longitude": 91.447098,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_cd35c3ca4f14ed6f",
+                "name": "Сторона A",
+                "kind": "dynamic",
+                "image": null
+            },
+            {
+                "id": "surf_5a258ae4bbdeac73",
+                "name": "Сторона B",
+                "kind": "dynamic",
+                "image": null
+            }
+        ]
+    },
+    {
+        "id": "str_4746713cfd1644ed",
+        "number": "202",
+        "type": "cityscroller",
+        "location_description": "Проспект Ленина 59, со стороны дома № 61.",
+        "latitude": 53.722342,
+        "longitude": 91.44662,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_4e081ea3c40bbe72",
+                "name": "Сторона A",
+                "kind": "dynamic",
+                "image": null
+            },
+            {
+                "id": "surf_be02cf5111f916b5",
+                "name": "Сторона B",
+                "kind": "dynamic",
+                "image": null
+            }
+        ]
+    },
+    {
+        "id": "str_8a4cf9be8a2e474b",
+        "number": "183",
+        "type": "cityboard",
+        "location_description": "ул. Советская, район ТЦ Владимирский, в 50м. От ул. Некрасова",
+        "latitude": 53.718802,
+        "longitude": 91.423925,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_44977f576c72971b",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_7882d7cefacfa688",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_96f13dd03748956e",
+        "number": "185",
+        "type": "cityboard",
+        "location_description": "ул. Советская, район ТЦ Владимирский, в 90м. От ул. Некрасова",
+        "latitude": 53.718751,
+        "longitude": 91.42339,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_c4d4bf585bfc3d2e",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_7bdb9ecd9c38921f",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_92e184284b2dbb61",
+        "number": "191",
+        "type": "cityboard",
+        "location_description": "ул.Щетинкина (чётная сторона южнее жилого дома № 48)",
+        "latitude": 53.730725,
+        "longitude": 91.441601,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_517403ee2836c89e",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_91e4c13d0f55f5da",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_731271a87e7e016e",
+        "number": "192",
+        "type": "cityboard",
+        "location_description": "ул.Щетинкина (чётная сторона южнее жилого дома № 44)",
+        "latitude": 53.729873,
+        "longitude": 91.441832,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_885b2f8b7a3cee57",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_063597faac164446",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_2d0ccfe28db40f21",
+        "number": "193",
+        "type": "cityboard",
+        "location_description": "ул.Щетинкина (чётная строна южнее жилого дома № 40)",
+        "latitude": 53.729359,
+        "longitude": 91.441963,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_8e6adfdb14d7d4f0",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_9b5b138d0fe834c6",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_98bbad4d76ca2be3",
+        "number": "194",
+        "type": "cityboard",
+        "location_description": "ул.Щетинкина (чётная сторона  севернее жилого дома № 40)",
+        "latitude": 53.728866,
+        "longitude": 91.442092,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_dd224889592011df",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_bab0c356a5289416",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_b410281fcb1ff20f",
+        "number": "195",
+        "type": "cityboard",
+        "location_description": "ул.Щетинкина (чётная сторона в районе жилого дома № 38)",
+        "latitude": 53.728492,
+        "longitude": 91.442215,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_711b5e74d6101854",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_8d2103a5a7bc9059",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_f4eed12dde4c9dd0",
+        "number": "176",
+        "type": "cityboard",
+        "location_description": "уд. Торговая 3, слева от входа ТЦ Альтаир",
+        "latitude": 53.742991,
+        "longitude": 91.437149,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_b7d9e4aad6aa3623",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_ec81da4e1ce5b031",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_12d5b5fabe43cd5c",
+        "number": "177",
+        "type": "cityboard",
+        "location_description": "уд. Торговая 3, справа от входа ТЦ Альтаир",
+        "latitude": 53.742696,
+        "longitude": 91.436796,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_75c5a418f583cad5",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_d9eb893ff08fad0a",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_c278856fcbe63072",
+        "number": "1А",
+        "type": "lightbox",
+        "location_description": "Аэропорт, справа от центрального входа, над кассой (левый)",
+        "latitude": 53.751377,
+        "longitude": 91.399759,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_4bf947ece11bf6a0",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_0afb338f58991026",
+        "number": "2А",
+        "type": "lightbox",
+        "location_description": "Аэропорт, справа от центрального входа, над кассой (левый)",
+        "latitude": 53.751377,
+        "longitude": 91.399759,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_4ceffa66ed628768",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_f83f2831f11e9824",
+        "number": "3А",
+        "type": "lightbox",
+        "location_description": "Аэропорт, справа от центрального входа, над кассой (левый)",
+        "latitude": 53.751377,
+        "longitude": 91.399759,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_8d0fca5b0916f7be",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_94017ee129d68103",
+        "number": "4А",
+        "type": "lightbox",
+        "location_description": "Аэропорт, справа от центрального входа, над кассой (левый)",
+        "latitude": 53.751377,
+        "longitude": 91.399759,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_919f20bbfe48399a",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_9e00a7bed7fbc5a1",
+        "number": "5А",
+        "type": "lightbox",
+        "location_description": "Аэропорт, справа от центрального входа, над кассой (левый)",
+        "latitude": 53.751377,
+        "longitude": 91.399759,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_9dd62d8791b3005d",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_b983d4114bf68022",
+        "number": "6А",
+        "type": "lightbox",
+        "location_description": "Аэропорт, справа от центрального входа, над кассой (левый)",
+        "latitude": 53.751377,
+        "longitude": 91.399759,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_db4dde84fd899414",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_86ac0ad9140b4140",
+        "number": "7А",
+        "type": "lightbox",
+        "location_description": "Аэропорт, справа от центрального входа, над кассой (левый)",
+        "latitude": 53.751377,
+        "longitude": 91.399759,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_d36957e28c5bfe39",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_b813dd5f522434ff",
+        "number": "10А",
+        "type": "lightbox",
+        "location_description": "Аэропорт, справа от центрального входа, над кассой (левый)",
+        "latitude": 53.751377,
+        "longitude": 91.399759,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_576ede58b89b7db1",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_549f1c22042ff254",
+        "number": "156",
+        "type": "billboard",
+        "location_description": "ул.Космонавтов (гост. Черногорск, Сбербанк)",
+        "latitude": 53.831249,
+        "longitude": 91.321052,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_8da9f5e9a2efc75d",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_9a9f62b580d589bb",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_1e166e8d6350e5a9",
+        "number": "160",
+        "type": "billboard",
+        "location_description": "Пр.Космонавтов в районе д.4",
+        "latitude": 53.822387,
+        "longitude": 91.329576,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_e756f031d57796af",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_f431510a0c07777a",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_730f21f69e5e4872",
+        "number": "178",
+        "type": "billboard",
+        "location_description": "Ул.Мира, после пересечения с ул.Тельмана, въезд в г.Черногорск",
+        "latitude": 53.811575,
+        "longitude": 91.322634,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_38730b14f95d2765",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_ffe3882f298a6b8c",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_869710a7951dc2f7",
+        "number": "312",
+        "type": "billboard",
+        "location_description": "ул. Пушкина, маг. Уют",
+        "latitude": 53.828595,
+        "longitude": 91.325738,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_c572b7cc63b4323e",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_dd1ee22c6b1b9007",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_137996bed544c889",
+        "number": "063",
+        "type": "billboard",
+        "location_description": "ул. Тихонова, в районе АЗС \"ХТК\", пересечение с ул. Линейная",
+        "latitude": 53.824879,
+        "longitude": 91.343146,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_df5a3d45f6924ada",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_34ab7bed6f36a954",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_1a6c1952e27ea960",
+        "number": "245",
+        "type": "billboard",
+        "location_description": "Ул. Линейная, в районе пересечения с ул. Калинина (Автовокзал)",
+        "latitude": 53.822545,
+        "longitude": 91.338584,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_fca10ac993665ce1",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_5259110b85ec637b",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_72843aeee1d2ea4f",
+        "number": "326",
+        "type": "billboard",
+        "location_description": "ул. Мира, въезд в город, 150м по правой стороне от кольцевой развязки.",
+        "latitude": 53.799916,
+        "longitude": 91.34967,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_ae82e5926eb36816",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_86faee50da57fe38",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_c2056c2dd3389108",
+        "number": "313",
+        "type": "billboard",
+        "location_description": "с. Белый Яр, ул. Ленина, центр Администрация",
+        "latitude": 53.599104,
+        "longitude": 91.378266,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_eda577ad3e0bf1ae",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_5263ee46d59e1eaa",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_2c59c57602842f95",
+        "number": "193",
+        "type": "billboard",
+        "location_description": "с. Белый Яр, ул. Ленина в районе магазина Батон",
+        "latitude": 53.613801,
+        "longitude": 91.403915,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_f8af8a8514844132",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_be6c71996fd1587c",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_2c603e97244ba179",
+        "number": "086",
+        "type": "billboard",
+        "location_description": "с. Белый Яр, ул. Ленина в районе магазина Батон (выезд в Абакан)",
+        "latitude": 53.614373,
+        "longitude": 91.405088,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_977b17f98b05b395",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_75de1689bd4bee1c",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_20aefae2ffe413f4",
+        "number": "166",
+        "type": "brandmauer",
+        "location_description": "Перекресток АД Абакан-Саяногорск-Белый Яр (Заправка РОСНЕФТЬ)",
+        "latitude": 53.616941,
+        "longitude": 91.411143,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_fa86437ed5fcaf69",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_cd8594da4c2322c2",
+        "number": "311",
+        "type": "billboard",
+        "location_description": "Район рынка, рядом с автостоянкой, ул. Лазо в районе д.№12",
+        "latitude": 52.647954,
+        "longitude": 90.085234,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_d5aa45fe9b467434",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_32c3eec17bef198e",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_2d4b2bef89ae51bc",
+        "number": "167",
+        "type": "billboard",
+        "location_description": "ул. Промышленная, трасса Абакан-Ак -Довурак, Въезд в г. Абаза,за 200м перед мостом",
+        "latitude": 52.629859,
+        "longitude": 90.060668,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_1477e3f28703e2b1",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_6505258e2c814039",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_b007d28d72495ffe",
+        "number": "295",
+        "type": "billboard",
+        "location_description": "Вершина-Теи возле дома №7 по улице Советская  (Рудоуправление)",
+        "latitude": 53.268744,
+        "longitude": 89.567885,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_f6475e4998de2961",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_f1f7bdd0a3a73e50",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_599b8c5f7fd19e92",
+        "number": "171",
+        "type": "billboard",
+        "location_description": "Выезд из поселока со стороны Аскиза,перед объездной Таштып",
+        "latitude": 53.268744,
+        "longitude": 89.567885,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_540dd1665d127745",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_c3e26c819fd8ff5c",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_f77e8fc6e5243cb4",
+        "number": "306",
+        "type": "billboard",
+        "location_description": "РХ, Аскизский район, А\/Д Абакан- Ак-Довурак, 95+560м, справа по направлению в Ак-Довурак",
+        "latitude": 53.121855,
+        "longitude": 90.502729,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_40f00fb1c0a56d88",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_97cee50691fbf2f7",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_349542eaf3cbad14",
+        "number": "304",
+        "type": "billboard",
+        "location_description": "РХ, Аскизский район, А\/Д Абакан- Ак-Довурак, 95+530м, справа по направлению в Ак-Довурак",
+        "latitude": 53.122723,
+        "longitude": 90.502919,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_e5ce5ec0e956d93a",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_2916cc74ff9694e0",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_db7aef629da459ac",
+        "number": "307",
+        "type": "billboard",
+        "location_description": "В районе примыкания дороги, ведущей в п.Краснотуранск, к участку трассы Минусинск Беллык. (в Абакан)",
+        "latitude": 54.303341,
+        "longitude": 91.813388,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_39a6cca4681bf045",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_1443af8133f45ca8",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_b036420e3e2a737b",
+        "number": "319",
+        "type": "billboard",
+        "location_description": "Автодорога Ачинск-Ужур-Шира-Троицкое, 239км+200м, въезд по направлению в Шира.",
+        "latitude": 54.515085,
+        "longitude": 90.062447,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_baaa893703cc362a",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_8b4a6ff9409badf6",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_404fb2023e9f89ba",
+        "number": "262",
+        "type": "billboard",
+        "location_description": "п.Жемчужный, перекрёсток ул. Садовая, ул. Староверова и ул. Гайдара",
+        "latitude": 54.495345,
+        "longitude": 90.15134,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_0928efe2a2bf25ce",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_e4013fec4f013433",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_62044dc35a6764f8",
+        "number": "305",
+        "type": "billboard",
+        "location_description": "Автодорога Абакан-Шира, перед перекрёстком Шира-Жемчужный, 245км+600м, справа. (в Абакан)",
+        "latitude": 54.485222,
+        "longitude": 90.146562,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_b2ea923dbfdf57e0",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_94a166b2cc130639",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_902e0e04d7d70efd",
+        "number": "148",
+        "type": "billboard",
+        "location_description": "А\/Д \"Ачинск-Ужур-Шира-Троицкое\" 243 км +650 м по направлению в Абакан",
+        "latitude": 54.498152,
+        "longitude": 90.121037,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_cfd926d87cebc894",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_6372fa9484bb5d04",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_4efffe456a9aad04",
+        "number": "129",
+        "type": "billboard",
+        "location_description": "Въезд в город Минусинск со стороны Краснотуранска, в районе АЗС, 200м от кольца, район ул. Городокская",
+        "latitude": 53.732688,
+        "longitude": 91.690309,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_2851e174b51de84f",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_d7ca61f4fdae3d58",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_cc5e9198d1961229",
+        "number": "127",
+        "type": "billboard",
+        "location_description": "Въезд в город Минусинск со стороны Краснотуранска, по ул.Городокская, конструкция 23",
+        "latitude": 53.743546,
+        "longitude": 91.692486,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_3f752bc3c65106d9",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_51fcf09d7f9968d3",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_2d1747c161bf1c31",
+        "number": "343",
+        "type": "cityboard",
+        "location_description": "р-он ул. Народная, д.62 (МФЦ)",
+        "latitude": 53.696249,
+        "longitude": 91.673509,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_fa24d9d34d00dbd2",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_3c83d0b7bf49c30b",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_625f61e1396629c9",
+        "number": "111",
+        "type": "billboard",
+        "location_description": "Въезд в Абакан Трасса Абакан - Подсинее 5км + 880м справа",
+        "latitude": 53.663481,
+        "longitude": 91.536207,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_116927df8b9a7742",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_ed3cc5c4ba44322a",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_dd0928c1eaae0b55",
+        "number": "112",
+        "type": "billboard",
+        "location_description": "Трасса Абакан - Подсинее 5км + 900м справа",
+        "latitude": 53.662083,
+        "longitude": 91.536045,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_d11f32ddc12992db",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_d04a3a38c02ede87",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_3ba56b9750aaa683",
+        "number": "043",
+        "type": "billboard",
+        "location_description": "Въезд в Абакан Трасса Абакан - Подсинее 5км + 760м справа",
+        "latitude": 53.662426,
+        "longitude": 91.536542,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_5e962cb613dbaea6",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_e93eed2df40cb469",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_0c0b72aeb7d389f5",
+        "number": "248",
+        "type": "billboard",
+        "location_description": "Въезд в Абакан Трасса Абакан - Подсинее 4км + 250м слрава",
+        "latitude": 53.67718,
+        "longitude": 91.531632,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_6f17a4fcdfa206b1",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_ecbfacaa30628011",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_46aaae7fd846f342",
+        "number": "118",
+        "type": "billboard",
+        "location_description": "Въезд в Абакан Трасса Абакан - Подсинее 4км + 150м справа",
+        "latitude": 53.677582,
+        "longitude": 91.531451,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_363c6bd1903b0fb2",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_90e906e35bee2b2d",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_482432714233daf3",
+        "number": "165",
+        "type": "billboard",
+        "location_description": "Въезд в Абакан Трасса Абакан - Подсинее 3км + 370м справа",
+        "latitude": 53.686433,
+        "longitude": 91.526827,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_94683d8fbc48a13b",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_7dfccf98eec47b95",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_543d0f56c6ff128b",
+        "number": "235",
+        "type": "billboard",
+        "location_description": "Трасса Абакан - Подсинее 2км + 645м справа, направление в Минусинск",
+        "latitude": 53.689953,
+        "longitude": 91.521495,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_cf352c71a9dc07dd",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_c61e801f57882b62",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_ed849d4db73e2537",
+        "number": "222",
+        "type": "billboard",
+        "location_description": "Выезд из Абакана в город Минусинск, Р-257, 210 метров от поста ГИБДД (на горке справа)",
+        "latitude": 53.705454,
+        "longitude": 91.494184,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_ae1bf009a73af384",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_870991ad58ce0e64",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_478b4ac3a6b47349",
+        "number": "292",
+        "type": "billboard",
+        "location_description": "Район Братского моста, 427км+ 489м   справа по направлению движения.  Въезд в Абакан.",
+        "latitude": 53.622597,
+        "longitude": 91.517711,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_1eac3e590e2782c3",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_28305d5f1bfb6f1a",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_36995515f6fe35c9",
+        "number": "108",
+        "type": "billboard",
+        "location_description": "Развилка,дорога ч\\з Братский мост, 427км+200м, справа по направлению движени.  Въезд в Абакан.",
+        "latitude": 53.623134,
+        "longitude": 91.514439,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_8ac2835cb6d7ca81",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_9f11f4d031315425",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_ba65dda66fd719e6",
+        "number": "188",
+        "type": "billboard",
+        "location_description": "Район Братского моста, 426км справа по направлению движения в г.Минусинск из Абакана.",
+        "latitude": 53.625405,
+        "longitude": 91.497291,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_086ce362e464c84a",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_d6185c93f5fc4e6d",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_6c23f36b46a77f29",
+        "number": "187",
+        "type": "billboard",
+        "location_description": "район Братского моста, 425км+900м справа по направлению движения в г.Минусинск из Абакана",
+        "latitude": 53.625768,
+        "longitude": 91.495559,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_2ffb5b4a0d794a95",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_03f87aaa6d0bc044",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_129e86667d0f284a",
+        "number": "115",
+        "type": "billboard",
+        "location_description": "район Братского моста, 423км+ 700м  справа по направлению движения .           Въезд в Абакан.",
+        "latitude": 53.640874,
+        "longitude": 91.481777,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_f539fcca5307f528",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_f1b47c2dd6ded2a6",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_e8f295ca89a1080a",
+        "number": "349",
+        "type": "billboard",
+        "location_description": "район Братского моста, 423км+ 600м, справа по направлению движения .  Въезд в Абакан.",
+        "latitude": 53.64242,
+        "longitude": 91.481034,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_558625b07a53ba17",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_4ed3e328c9207097",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_e946a16ea7a886ac",
+        "number": "350",
+        "type": "billboard",
+        "location_description": "район Братского моста, 423км+ 600м  справа по направлению движения в г.Минусинск.",
+        "latitude": 53.642318,
+        "longitude": 91.48036,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_7afa193d619d89f0",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_62bb39da2bc26289",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_bc2b9aba2683689b",
+        "number": "158",
+        "type": "billboard",
+        "location_description": "перед виадуком ч\\з ж\\д пути. 414км+330м, справа по направлению движения.  Въезд в Абакан.",
+        "latitude": 53.691957,
+        "longitude": 91.374064,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_821b221a1cada69f",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_f75ae6b965c12414",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_87375c4fde1ffd56",
+        "number": "334",
+        "type": "billboard",
+        "location_description": "перед виадуком ч\\з ж\\д пути. 414км+240м, справа по направлению движения.  Въезд в Абакан.",
+        "latitude": 53.692936,
+        "longitude": 91.373069,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_6635b8b12e3cc443",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_9d98eb57aff9a36e",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_7a93ba3c8b35ca5d",
+        "number": "194",
+        "type": "billboard",
+        "location_description": "Трасса Р-257, обход Абакан 412 км + 950 м, направление с Минусинска.                      Въезд в Абакан.",
+        "latitude": 53.703764,
+        "longitude": 91.362403,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_ff1445ada53383bd",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_4528911de38fd6ad",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_bf8811209ca7128d",
+        "number": "296",
+        "type": "billboard",
+        "location_description": "Р - 257 \"Енисей\" 382км. + 50м. Пригорск.Въезд в Абакан, Справа",
+        "latitude": 53.902941,
+        "longitude": 91.255648,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_006a2c5798d29a20",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_977895fc908a50ad",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_6f0008c86a0445b9",
+        "number": "105",
+        "type": "billboard",
+        "location_description": "Р - 257 \"Енисей\" Пригорск .Въезд в Абакан, Справа",
+        "latitude": 53.902152,
+        "longitude": 91.255472,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_74f3f47a0f5e4c5c",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_0946f55ab33afa36",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_7060bec534b807d0",
+        "number": "294",
+        "type": "billboard",
+        "location_description": "Р - 257 \"Енисей\" 384км. + 200м.Въезд в Абакан, справа.  Въезд в Абакан.",
+        "latitude": 53.895045,
+        "longitude": 91.254518,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_88309b4ca4bbc2e4",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_bcc03758c2b3db93",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_cbba71731ba83c66",
+        "number": "143",
+        "type": "billboard",
+        "location_description": "Р - 257 \"Енисей\" 384км. + 500м. Пригорск, Справа Въезд в Абакан.",
+        "latitude": 53.892019,
+        "longitude": 91.253743,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_d6736b7391846f3a",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_6de0b9ea45e30932",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_80f43f5f27a3d879",
+        "number": "300",
+        "type": "billboard",
+        "location_description": "Р-257 \"Енисей\" На горе между п. Пригорск и г.Черногорск.  Въезд в Абакан.",
+        "latitude": 53.876049,
+        "longitude": 91.255382,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_4a0a813d0f5f5ca0",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_cc64da2347e1bf28",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_661109b98317e063",
+        "number": "318",
+        "type": "billboard",
+        "location_description": "Р - 257 А\/Д \"Енисей\", 397+900 км. В районе котельной г.Черногорска.  Въезд в Абакан.",
+        "latitude": 53.805264,
+        "longitude": 91.359479,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_b03f1dfbca6618fb",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_ba31f2d8b1013ab4",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_50878d63396413f5",
+        "number": "145",
+        "type": "billboard",
+        "location_description": "Р - 257 А\/Д \"Енисей\", 398 км. В районе котельной, справа г.Черногорска,  Въезд в Абакан.",
+        "latitude": 53.804529,
+        "longitude": 91.358722,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_5a9ac75e6e1c0841",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_0c83fabb9b4af80d",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_c2875284904c49cc",
+        "number": "146",
+        "type": "billboard",
+        "location_description": "Р - 257 А\/Д \"Енисей\", 398+100 км. В районе котельной г.Черногорска, справа,  Въезд в Абакан.",
+        "latitude": 53.803817,
+        "longitude": 91.35781,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_9aaa90550d53a019",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_654a56293670de38",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_4d1bebea877bd21d",
+        "number": "157",
+        "type": "billboard",
+        "location_description": "п.Расцвет, 400км+350м, Въезд в Абакан.",
+        "latitude": 53.78534,
+        "longitude": 91.357345,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_87f07b0b52e009c3",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_11269d07a5ab2866",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_cf1c160ff916413a",
+        "number": "137",
+        "type": "billboard",
+        "location_description": "п. Расцвет (4), 250м перед поворотом  на пос. Зеленое. Въезд в Абакан.",
+        "latitude": 53.78371,
+        "longitude": 91.358232,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_011715189a4761d9",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_f7038f0a2cc37a41",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_3f35b7306a023724",
+        "number": "138",
+        "type": "billboard",
+        "location_description": "п. Расцвет (5), 150м перед поворотом  на пос. Зеленое. .Въезд в Абакан, Справа",
+        "latitude": 53.782852,
+        "longitude": 91.35879,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_4235105d98522752",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_60b61acd37b8cd22",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_7554d54c7c8f0272",
+        "number": "336",
+        "type": "brandmauer",
+        "location_description": "Р - 257 , на повороте в п.Зеленое, 400км+970м, суперсайт. .Въезд в Абакан, Справа",
+        "latitude": 53.780444,
+        "longitude": 91.361186,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_6e658d31f6f51565",
+                "name": "Рекламная поверхность",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_b2b693adbda581b4",
+        "number": "150",
+        "type": "billboard",
+        "location_description": "Чебурашка,Р-257, 401 км + 045 м, в Абакан, справа. Въезд в Абакан.",
+        "latitude": 53.77993,
+        "longitude": 91.362061,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_ae51e8016a8a01d8",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_02fca385baceac04",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_703202bbe5a65766",
+        "number": "040",
+        "type": "billboard",
+        "location_description": "Р - 257, Въезд в город Абакан, за поворотом на п. Зеленое, 401км + 120м.  Въезд в Абакан.",
+        "latitude": 53.779564,
+        "longitude": 91.362903,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_acad09682d0e5c39",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_c31a0808903aa3cf",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_87d77b8989813f08",
+        "number": "161",
+        "type": "billboard",
+        "location_description": "Р - 257, Въезд в город Абакан, за поворотом на п. Зеленое, 401км + 200м.  Въезд в Абакан.",
+        "latitude": 53.779309,
+        "longitude": 91.363676,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_3eadc94fd7caba97",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_8c1cb3685c739844",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_eead92f1fbe5edb9",
+        "number": "321",
+        "type": "billboard",
+        "location_description": "Р - 257 Въезд в город Абакан, за поворотом на п. Зеленое (1), 401км + 220м.  Въезд в Абакан.",
+        "latitude": 53.778947,
+        "longitude": 91.364524,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_0130ab37b4e1166f",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_f1a02182a8a6f60f",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_1d3e9d73b2ff0e69",
+        "number": "055",
+        "type": "billboard",
+        "location_description": "Р - 257, Въезд в город Абакан, за поворотом на п. Зеленое (1), 401км + 300м.  Въезд в Абакан.",
+        "latitude": 53.778616,
+        "longitude": 91.365594,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_9aca19d453fb7c00",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_97c2dae6e6af7649",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_a3a9517efaecb261",
+        "number": "351",
+        "type": "billboard",
+        "location_description": "Р - 257, Въезд в город Абакан, за поворотом на п. Зеленое (12), 401км + 380м. Въезд в Абакан.",
+        "latitude": 53.778297,
+        "longitude": 91.366742,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_01729b017e7b86ca",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_ebe28f18c8e54595",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_76777b34fb6faad8",
+        "number": "134",
+        "type": "billboard",
+        "location_description": "Р - 257, Выезд из г. Абакана, за поворотом на п. Зеленое (12), 401км + 465м.  Въезд в Абакан.",
+        "latitude": 53.778008,
+        "longitude": 91.367917,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_01f0454aed80c063",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_bc981461ae116ecc",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_527f2b0186f9638a",
+        "number": "345",
+        "type": "billboard",
+        "location_description": "Р-257, Въезд в город Абакан, за поворотом на п. Зеленое (2), 401км + 500м.  Въезд в Абакан.",
+        "latitude": 53.777695,
+        "longitude": 91.369097,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_00826ae094966b8c",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_c6312bd28650485a",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_ec0f797528fda27f",
+        "number": "346",
+        "type": "billboard",
+        "location_description": "Р - 257, Въезд в город Абакан, за поворотом на п. Зеленое (11), 401км.+ 640м.  Въезд в Абакан.",
+        "latitude": 53.77739,
+        "longitude": 91.370269,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_f7e68f52b677b07b",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_132455c45b92ce3c",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_b515843e30781b9d",
+        "number": "344",
+        "type": "billboard",
+        "location_description": "Р - 257, Выезд из г.Абакан, за поворотом на п. Зеленое (11), 401км.+ 690м.                Въезд в Абакан.",
+        "latitude": 53.777126,
+        "longitude": 91.371294,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_7264da52dd0aaaea",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_40fb9707f5004c6f",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_918ef51a7798dd0f",
+        "number": "347",
+        "type": "billboard",
+        "location_description": "Р - 257 , Въезд в город Абакан, за поворотом на п. Зеленое (3), 401км + 720м.  Въезд в Абакан.",
+        "latitude": 53.776857,
+        "longitude": 91.372334,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_9a1cb4a864d784e5",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_2adb88d31137fd25",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_172c53dca0102bd0",
+        "number": "322",
+        "type": "billboard",
+        "location_description": "Р-257, Въезд в город Абакан, за поворотом на п. Зеленое (4), 401км + 970м.  Въезд в Абакан.",
+        "latitude": 53.776575,
+        "longitude": 91.373368,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_d2c08b9ed216b256",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_5414d4a763559acc",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_839d4822db4b38d3",
+        "number": "84",
+        "type": "billboard",
+        "location_description": "Р - 257, Въезд из города Абакана, за поворотом на п. Зеленое, 402км.                  Въезд в Абакан.",
+        "latitude": 53.776278,
+        "longitude": 91.374491,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_e8bf8e60de764198",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_7ff45e9724c3efe7",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_e09fe6cd6cc40140",
+        "number": "085",
+        "type": "billboard",
+        "location_description": "Р-257, Въезд в город Абакан, за поворотом на п. Зеленое (5), 402км + 75м.  Въезд в Абакан.",
+        "latitude": 53.776022,
+        "longitude": 91.375483,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_659749235b8bb7d7",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_645f55eda6afaf4d",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_248d8ba2fd072fac",
+        "number": "309",
+        "type": "billboard",
+        "location_description": "Р - 257, Въезд в город Абакан, за поворотом на п. Зеленое (5), 402км + 120м.  Въезд в Абакан.",
+        "latitude": 53.775728,
+        "longitude": 91.376586,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_411ae2cdf63f0ff0",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_d801425a6faacbde",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_ddc47fdd18a61c81",
+        "number": "139",
+        "type": "billboard",
+        "location_description": "Р-257 Въезд в город Абакан, за поворотом на п. Зеленое (6), 402км + 260м.  Въезд в Абакан.",
+        "latitude": 53.775406,
+        "longitude": 91.377817,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_5a52cc02c7ccc1a2",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_9f4248a6ef766783",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_1a582d1b5fbdb80c",
+        "number": "130",
+        "type": "billboard",
+        "location_description": "Р - 257, Въезд в город Абакан, за поворотом на п. Зеленое (6), 402км + 430м.  Въезд в Абакан.",
+        "latitude": 53.775166,
+        "longitude": 91.378802,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_365b3e249576d41e",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_9fcb90888c1579b5",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_e4217bb3cbc13deb",
+        "number": "140",
+        "type": "billboard",
+        "location_description": "Р - 257, Въезд в город Абакан, за поворотом на п. Зеленое (7), 402км +370м.  Въезд в Абакан.",
+        "latitude": 53.774914,
+        "longitude": 91.379722,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_652ce02241720805",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_94af41f01b138f9b",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_4a346c5dfc6a714f",
+        "number": "132",
+        "type": "billboard",
+        "location_description": "Р - 257, Въезд в город Абакан, за поворотом на п. Зеленое (8),  402км + 500м.  Въезд в Абакан.",
+        "latitude": 53.77469,
+        "longitude": 91.380639,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_9c348c1143ca78b6",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_bc406f38651d329c",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_56368dda656bdf3c",
+        "number": "141",
+        "type": "billboard",
+        "location_description": "Р-257, Въезд в город Абакан, за поворотом на п. Зеленое (8),  402км + 500м.  Въезд в Абакан.",
+        "latitude": 53.774426,
+        "longitude": 91.381524,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_276fd9d5d2cb7965",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_dc80bf232912de1a",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_794c9ca992a78a8e",
+        "number": "133",
+        "type": "billboard",
+        "location_description": "Р - 257 Въезд в город Абакан, за поворотом на п. Зеленое (9),  402км + 560м",
+        "latitude": 53.774214,
+        "longitude": 91.382365,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_b3e321c5f11ced62",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_1ad1c426b3de108b",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_665a4e449adf3f2c",
+        "number": "142",
+        "type": "billboard",
+        "location_description": "Р-257, Въезд в город Абакан, за поворотом на п. Зеленое (9),  402км + 620м.  Въезд в Абакан.",
+        "latitude": 53.773993,
+        "longitude": 91.383157,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_a96b6c24f46736d2",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_58e492f5557e11a1",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_e4257043a9d9c7b0",
+        "number": "310",
+        "type": "billboard",
+        "location_description": "Р - 257, Въезд в город Абакан, за поворотом на п. Зеленое (10), 402км + 720м.  Въезд в Абакан.",
+        "latitude": 53.773652,
+        "longitude": 91.384576,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_8d2e8afa2884cc1c",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_eb69ab276500c9ae",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_5e0925986fbe476b",
+        "number": "030",
+        "type": "billboard",
+        "location_description": "Р - 257 , Выезд в города Абакана, справа Автосалон \"Kia\", 402км + 750м.",
+        "latitude": 53.77396,
+        "longitude": 91.385584,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_896cc7728720e042",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_518cac4bac493471",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_b72cf44e515457f8",
+        "number": "144",
+        "type": "billboard",
+        "location_description": "Р-257, Въезд в город в Абакан, справа \"Kia\", 402км + 850м.  Въезд в Абакан.",
+        "latitude": 53.773246,
+        "longitude": 91.386123,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_ae2cc90fdda0eb6d",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_e0331bd69e9094a0",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_784aa7f69914765a",
+        "number": "147",
+        "type": "billboard",
+        "location_description": "Въезд в город в Абакан, маг. \"БытТехника\" №1.  Въезд в Абакан.",
+        "latitude": 53.765072,
+        "longitude": 91.40339,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_abee52aea45b390b",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_e65253ac7ad0fa90",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_630eba8d0a22e468",
+        "number": "019",
+        "type": "billboard",
+        "location_description": "Усть-Абаканский район,  район село Калинино, Р-257 Енисей, 405-й километр, \n91 м от РК № 29\n  Въезд в Абакан.",
+        "latitude": 53.763024,
+        "longitude": 91.405562,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_f161af4c2f6440b1",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_258f963c838ff6c4",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_3534f601dc392fb1",
+        "number": "031",
+        "type": "billboard",
+        "location_description": "Усть-Абаканский район, Р-257 Енисей, 405-й километр, 148 м от РК №30   Въезд в Абакан.",
+        "latitude": 53.76305,
+        "longitude": 91.40555,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_da1c82506a873529",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_af2bdb7842bd5887",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_32ed2b80a2bd5c17",
+        "number": "015",
+        "type": "billboard",
+        "location_description": "Автодорога Абакан-Аскиз, 13+900, справа (поворот на Сапогово) Въезд в Абакан",
+        "latitude": 53.648863,
+        "longitude": 91.284519,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_457a96991d50fade",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_af0430237d80d548",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_64e7530fb4e6ab6f",
+        "number": "016",
+        "type": "billboard",
+        "location_description": "Автодорога Абакан-Аскиз, 13+900, справа (поворот на Сапогово) выезд из Абакана",
+        "latitude": 53.649161,
+        "longitude": 91.28416,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_a6529ff757748d06",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_0b4876af911db148",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_1eab1ce22f4521b1",
+        "number": "045",
+        "type": "billboard",
+        "location_description": "Автодорога Абакан-Ак-Довурак 11км + 900м справа  (выезд из Абакана)",
+        "latitude": 53.658481,
+        "longitude": 91.309249,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_873fb76d63c8177b",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_1e2ac4b4885ee67b",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_0b1d212c08570b37",
+        "number": "042",
+        "type": "billboard",
+        "location_description": "Автодорога Абакан-Ак-Довурак 11км + 800м справа  (выезд из Абакана) оплачиваем 30%",
+        "latitude": 53.658968,
+        "longitude": 91.31044,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_14bfea03fab33c8e",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_2e2faf39467c43f9",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_3fd9775731560dec",
+        "number": "038",
+        "type": "billboard",
+        "location_description": "Автодорога Абакан-Ак-Довурак 11км + 700м справа  (выезд из города Абакан)",
+        "latitude": 53.659475,
+        "longitude": 91.311765,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_40b93bd1bf6596bb",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_dcb37b580c62a542",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_0f572914a87ecbab",
+        "number": "073",
+        "type": "billboard",
+        "location_description": "Автодорога Абакан-Ак-Довурак 9км+500м справа  (выезд из города Абакан)",
+        "latitude": 53.668887,
+        "longitude": 91.336919,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_0cd4e3f7af5388c0",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_2f436775c62de56b",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_f510301dc40ddc9e",
+        "number": "153",
+        "type": "billboard",
+        "location_description": "Автодорога Абакан-Ак-Довурак, 100 метров до Ташебинского карьера (выезд из Абакана)",
+        "latitude": 53.670973,
+        "longitude": 91.342657,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_739e99f0d156d280",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_0b73c307dcd11830",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_fddede3a03a65f83",
+        "number": "208",
+        "type": "billboard",
+        "location_description": "А\/д Абакан-Саяногорск, 19км+400м, срава по направлению движения в г.Абакан. Въезд в Абакан",
+        "latitude": 53.604841,
+        "longitude": 91.415043,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_9922de8e7231e113",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_81507627f42dee6f",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_6b4e67acb8a41f25",
+        "number": "209",
+        "type": "billboard",
+        "location_description": "А\/д Абакан-Саяногорск, 19км,  справа по направлению движения в г.Абакан. Въезд в Абакан",
+        "latitude": 53.608211,
+        "longitude": 91.414105,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_0949c97f7b2fae83",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_6cbc7b05e9b0ec68",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_c37e4557c4a12006",
+        "number": "330",
+        "type": "billboard",
+        "location_description": "А\/д Абакан-Саяногорск, 17км,  справа по направлению движения в г.Абакан. Въезд в Абакан",
+        "latitude": 53.620509,
+        "longitude": 91.417222,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_b816942a73299e58",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_648baa2bdd86fabd",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_7325a26683535631",
+        "number": "335",
+        "type": "billboard",
+        "location_description": "А\/д Абакан-Саяногорск, 17км, (+ 500м, слева) справа по направлению движения в г.Абакан. Въезд в Абакан",
+        "latitude": 53.619128,
+        "longitude": 91.414829,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_8959c7ed9a31e076",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_e500e7f5f5b2cc9d",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_7babf038ea8a0768",
+        "number": "169",
+        "type": "billboard",
+        "location_description": "А\/д Абакан-Саяногорск, 13км.+ 900м,  справа по направлению Въезд в Абакан",
+        "latitude": 53.641496,
+        "longitude": 91.447323,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_6143ac458f44a28e",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_a2f33d957b9352ba",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_9102691dbaec7783",
+        "number": "210",
+        "type": "billboard",
+        "location_description": "А\/д Абакан-Саяногорск, 13км.+ 900м,  справа по направлению. Выезд из Абакана.",
+        "latitude": 53.644228,
+        "longitude": 91.452633,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_1cdcd64487024479",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_690913b45598328c",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_4bab0e1105170bd4",
+        "number": "211",
+        "type": "billboard",
+        "location_description": "А\/д Абакан-Саяногорск, 13км.+ 600м,                       Выезд из  г.Абакан.",
+        "latitude": 53.645451,
+        "longitude": 91.456568,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_df2fdcc5d269927f",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_f5b91b60eeffdc72",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_8d2ff2a19cb89e75",
+        "number": "212",
+        "type": "billboard",
+        "location_description": "А\/д Абакан-Саяногорск, р-н Кайбал 10км.+ 300м, справа по направлению выезд из г.Абакана.",
+        "latitude": 53.665131,
+        "longitude": 91.491302,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_e3469258c0894636",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_d91b62b373ee82ef",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_2e3fdc85dbc74a74",
+        "number": "213",
+        "type": "billboard",
+        "location_description": "А\/д Абакан-Саяногорск, р-н Кайбал 10км.+ 300м, справа по направлению, въезд в г.Абакан.",
+        "latitude": 53.663959,
+        "longitude": 91.489735,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_8c706e0b6808d71a",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_b4ca3a92a7e62104",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_1800c30ef1d24dae",
+        "number": "214",
+        "type": "billboard",
+        "location_description": "А\\д Абакан-Саяногорск, р-н Кайбал 9км, справа по направлению движения. Въезд в Абакан",
+        "latitude": 53.671521,
+        "longitude": 91.505349,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_7d93f01025aeb8d4",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_ea8c977d33b1da20",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_91756ef97dcdbf65",
+        "number": "005",
+        "type": "billboard",
+        "location_description": "Трасса Абакан-Саяногорск, 7км+400м (дачи Орбита,ул. Кирпичная 11). Въезд в Абакан",
+        "latitude": 53.685059,
+        "longitude": 91.508824,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_5d6156b75047855a",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_9da29155e40a3f2f",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_f387f9e58390d618",
+        "number": "223",
+        "type": "billboard",
+        "location_description": "А\/Д Р-257 (Енисей) 455 км+ 600 м, справа, направление в Минусинск с Кызыла   (рядом кафе Бегемот)",
+        "latitude": 53.54588,
+        "longitude": 91.832069,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_91b2efaec5370bed",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_ed40446d96e4cee6",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_89704c2a08fd2609",
+        "number": "229",
+        "type": "billboard",
+        "location_description": "А\/Д Р-257 (Енисей) 451 км+ 550 м, справа, направление в Минусинск с Кызыла  (озеро Тагарское)",
+        "latitude": 53.578039,
+        "longitude": 91.830677,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_30cf3b58d701ad15",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_436c5a4f9fd16d60",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_91ec900b2fd622d5",
+        "number": "324",
+        "type": "billboard",
+        "location_description": "ул. Успенского, Ленинградский мкр. д6, западный торец здания.",
+        "latitude": 53.103838,
+        "longitude": 91.405494,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_168a857a701ed179",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_adbb1b9ecb14f897",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_6f156d350ecc8b61",
+        "number": "325",
+        "type": "billboard",
+        "location_description": "ул. Пионерская, напротив супермаркет \"Командор\"",
+        "latitude": 53.101249,
+        "longitude": 91.417613,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_f1380b448236e08a",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_3f2047bf50c941bb",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_f60aaa55bde86ac0",
+        "number": "201",
+        "type": "billboard",
+        "location_description": "А\\Д Абакан-Саяногорск 77км+800м,справа (въезд в Саяногорск)",
+        "latitude": 53.133675,
+        "longitude": 91.44424,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_27c1bc48f78c2821",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_a4b62b4ddeb27607",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    },
+    {
+        "id": "str_874f2b2c3c2038bc",
+        "number": "203",
+        "type": "billboard",
+        "location_description": "А\\Д Абакан-Саяногорск 78км+100м,справа (въезд в Саяногорск)",
+        "latitude": 53.131394,
+        "longitude": 91.441773,
+        "is_visible": true,
+        "surfaces": [
+            {
+                "id": "surf_2c73ebe22ae11db7",
+                "name": "Сторона A",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            },
+            {
+                "id": "surf_1b65d8ef6786bd74",
+                "name": "Сторона B",
+                "kind": "standard",
+                "image": null,
+                "status": "unavailable"
+            }
+        ]
+    }
+]

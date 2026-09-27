@@ -41,6 +41,9 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="/structures">Конструкции</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/#contact">Контакты</a>
                     </li>
                 </ul>
