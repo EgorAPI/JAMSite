@@ -197,13 +197,9 @@ document.addEventListener('DOMContentLoaded', function () {
             'structures-search'
         );
 
-        const availabilityFilter = document.getElementById(
-            'structures-availability-filter'
-        );
 
         function applyFilters() {
             const selectedType = typeFilter.value;
-            const selectedAvailability = availabilityFilter.value;
 
             const query = searchInput.value
                 .trim()
@@ -229,24 +225,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     || number.includes(query)
                     || description.includes(query);
 
-                const hasFreeSurface = (structure.surfaces ?? []).some(
-                    function (surface) {
-                        return surface.kind === 'standard'
-                            && surface.status === 'free';
-                    }
-                );
-
-                const matchesAvailability =
-                    selectedAvailability === ''
-                    || (
-                        selectedAvailability === 'free'
-                        && hasFreeSurface
-                );
 
                 const shouldShow =
                     matchesType
-                    && matchesSearch
-                    && matchesAvailability;
+                    && matchesSearch;
 
                 if (shouldShow) {
                     item.marker.addTo(map);
@@ -266,8 +248,4 @@ document.addEventListener('DOMContentLoaded', function () {
             applyFilters
         );
 
-        availabilityFilter.addEventListener(
-            'change',
-            applyFilters
-        );
     });

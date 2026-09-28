@@ -14,7 +14,7 @@ return [
     ],
     'paths' => [
         'data' => dirname(__DIR__) . '/data',
-        'uploads' => dirname(__DIR__) . '/public/uploads',
+        'uploads' => $_ENV['UPLOADS_PATH'] ?? dirname(__DIR__) . '/public/uploads',
         'logs' => dirname(__DIR__) . '/storage/logs',
         'tmp' => dirname(__DIR__) . '/storage/tmp',
     ],
