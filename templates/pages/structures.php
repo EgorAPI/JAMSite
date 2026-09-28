@@ -37,13 +37,7 @@ ob_start();
             </div>
 
             <div class="col-md-3">
-                <select
-                    id="structures-availability-filter"
-                    class="form-select"
-                >
-                    <option value="">Все конструкции</option>
-                    <option value="free">Есть свободная поверхность</option>
-                </select>
+
             </div>
         </div>
     </div>
@@ -103,10 +97,6 @@ ob_start();
         JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
     ) ?>;
 
-    window.structureStatuses = <?= json_encode(
-        $structureStatuses,
-        JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
-    ) ?>;
     </script>
 
     <script src="/assets/js/structures-map.js"></script>

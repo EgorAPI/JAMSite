@@ -204,17 +204,6 @@ final class AdminStructureController
             exit;
         }
 
-        $surfaceStatuses = $_POST['surface_status'] ?? [];
-
-        if (is_array($surfaceStatuses)) {
-            foreach ($surfaceStatuses as $surfaceId => $status) {
-                $service->updateSurfaceStatus(
-                    $id,
-                    (string) $surfaceId,
-                    (string) $status
-                );
-            }
-        }
 
         $surfaceImagesToRemove = $_POST['surface_image_remove'] ?? [];
 
@@ -312,9 +301,7 @@ final class AdminStructureController
             }
         }
 
-        header(
-            'Location: /admin/structures/edit?id=' . urlencode($id)
-        );
+        header('Location: /admin/structures');
         exit;
     }
 

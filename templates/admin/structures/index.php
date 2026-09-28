@@ -88,20 +88,6 @@ ob_start();
                 </div>
 
                 <div class="col-lg-2">
-                    <label for="structures-admin-availability" class="form-label">
-                        Доступность
-                    </label>
-
-                    <select
-                        id="structures-admin-availability"
-                        class="form-select"
-                    >
-                        <option value="">Все конструкции</option>
-                        <option value="free">Есть свободная поверхность</option>
-                    </select>
-                </div>
-
-                <div class="col-lg-2">
                     <label for="structures-admin-sort" class="form-label">
                         Сортировка
                     </label>
@@ -137,7 +123,7 @@ ob_start();
                             <th>Номер</th>
                             <th>Тип</th>
                             <th>Местоположение</th>
-                            <th>Поверхности</th>
+                            <th>Фото поверхности</th>
                             <th>Статус на сайте</th>
                             <th class="text-end">Действия</th>
                         </tr>
@@ -145,19 +131,6 @@ ob_start();
 
                     <tbody id="structures-admin-table-body">
                         <?php foreach ($structures as $structure): ?>
-                            <?php
-                            $hasFreeSurface = false;
-
-                            foreach (($structure['surfaces'] ?? []) as $surface) {
-                                if (
-                                    ($surface['kind'] ?? '') === 'standard'
-                                    && ($surface['status'] ?? '') === 'free'
-                                ) {
-                                    $hasFreeSurface = true;
-                                    break;
-                                }
-                            }
-                            ?>
                             <tr
                                 data-structure-row
                                 data-number="<?= e((string) ($structure['number'] ?? '')) ?>"
@@ -170,7 +143,6 @@ ob_start();
                                         ?? ''
                                     )
                                 ) ?>"
-                                data-has-free="<?= $hasFreeSurface ? '1' : '0' ?>"
                             >
                                 <td>
                                     <strong>
@@ -191,27 +163,13 @@ ob_start();
 
                                 <td>
                                     <?php foreach (($structure['surfaces'] ?? []) as $surface): ?>
-                                        <div>
+                                        <div class="mb-1 text-nowrap">
                                             <?= e((string) ($surface['name'] ?? '')) ?>:
 
-                                            <?php if (($surface['kind'] ?? '') === 'dynamic'): ?>
-                                                <strong>Сменяющаяся конструкция</strong>
+                                           <?php if (!empty($surface['image'])): ?>
+                                                <strong class="text-success">✓ Есть</strong>
                                             <?php else: ?>
-                                                <select
-                                                    class="form-select form-select-sm d-inline-block w-auto"
-                                                    data-quick-surface-status
-                                                    data-structure-id="<?= e((string) ($structure['id'] ?? '')) ?>"
-                                                    data-surface-id="<?= e((string) ($surface['id'] ?? '')) ?>"
-                                                >
-                                                    <?php foreach ($structureStatuses as $statusKey => $statusName): ?>
-                                                        <option
-                                                            value="<?= e($statusKey) ?>"
-                                                            <?= ($surface['status'] ?? '') === $statusKey ? 'selected' : '' ?>
-                                                        >
-                                                            <?= e($statusName) ?>
-                                                        </option>
-                                                    <?php endforeach; ?>
-                                                </select>
+                                                <span class="text-muted">— Нет</span>
                                             <?php endif; ?>
                                         </div>
                                     <?php endforeach; ?>
@@ -270,9 +228,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const typeSelect = document.getElementById('structures-admin-type');
     const sortSelect = document.getElementById('structures-admin-sort');
     const tableBody = document.getElementById('structures-admin-table-body');
-    const availabilitySelect = document.getElementById(
-        'structures-admin-availability'
-    );
     const rows = document.querySelectorAll('[data-structure-row]');
 
     if (!searchInput) {
@@ -288,15 +243,10 @@ document.addEventListener('DOMContentLoaded', function () {
             ? typeSelect.value
             : '';
 
-        const selectedAvailability = availabilitySelect
-            ? availabilitySelect.value
-            : '';
-
         rows.forEach(function (row) {
             const number = (row.dataset.number || '').toLowerCase();
             const description = (row.dataset.description || '').toLowerCase();
             const type = row.dataset.type || '';
-            const hasFree = row.dataset.hasFree === '1';
 
             const matchesSearch =
                 number.includes(query)
@@ -306,17 +256,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 selectedType === ''
                 || type === selectedType;
 
-            const matchesAvailability =
-                selectedAvailability === ''
-                || (
-                    selectedAvailability === 'free'
-                    && hasFree
-                );
 
             row.hidden = !(
                 matchesSearch
                 && matchesType
-                && matchesAvailability
             );
         });
     }
@@ -327,12 +270,6 @@ document.addEventListener('DOMContentLoaded', function () {
         typeSelect.addEventListener('change', applyFilters);
     }
 
-    if (availabilitySelect) {
-        availabilitySelect.addEventListener(
-            'change',
-            applyFilters
-        );
-    }
 
     function applySorting() {
         if (!sortSelect || !tableBody) {
@@ -386,76 +323,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     applySorting();
 
-    const statusSelects = document.querySelectorAll(
-        '[data-quick-surface-status]'
-    );
-
-    statusSelects.forEach(function (select) {
-        select.addEventListener('change', async function () {
-            const previousValue = select.dataset.previousValue
-                || select.value;
-
-            const formData = new FormData();
-
-            formData.append('_csrf', window.structuresAdminCsrf);
-            formData.append(
-                'structure_id',
-                select.dataset.structureId
-            );
-            formData.append(
-                'surface_id',
-                select.dataset.surfaceId
-            );
-            formData.append(
-                'status',
-                select.value
-            );
-
-            select.disabled = true;
-
-            try {
-                const response = await fetch(
-                    '/admin/structures/surface-status',
-                    {
-                        method: 'POST',
-                        body: formData
-                    }
-                );
-
-                if (!response.ok) {
-                    throw new Error('Не удалось сохранить статус.');
-                }
-
-                select.dataset.previousValue = select.value;
-
-                const row = select.closest('[data-structure-row]');
-
-                if (row) {
-                    const rowStatusSelects = row.querySelectorAll(
-                        '[data-quick-surface-status]'
-                    );
-
-                    const hasFreeSurface = Array.from(
-                        rowStatusSelects
-                    ).some(function (statusSelect) {
-                        return statusSelect.value === 'free';
-                    });
-
-                    row.dataset.hasFree = hasFreeSurface ? '1' : '0';
-
-                    applyFilters();
-                }
-            } catch (error) {
-                select.value = previousValue;
-
-                alert('Не удалось сохранить статус.');
-            } finally {
-                select.disabled = false;
-            }
-        });
-
-        select.dataset.previousValue = select.value;
-    });
 
     const visibilitySwitches = document.querySelectorAll(
         '[data-quick-structure-visibility]'

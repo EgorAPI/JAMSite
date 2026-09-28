@@ -37,12 +37,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/#about">О нас</a>
+                        <a class="nav-link" href="/structures">Карта конструкций</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/structures">Конструкции</a>
+                        <a class="nav-link" href="/#about">О нас</a>
                     </li>
+
+
                     <li class="nav-item">
                         <a class="nav-link" href="/#contact">Контакты</a>
                     </li>

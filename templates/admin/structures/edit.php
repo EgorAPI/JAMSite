@@ -100,52 +100,7 @@ ob_start();
                     ><?= e((string) ($structure['location_description'] ?? '')) ?></textarea>
                 </div>
 
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                        <label for="structure-latitude" class="form-label">
-                            Широта
-                        </label>
-
-                        <input
-                            type="number"
-                            id="structure-latitude"
-                            name="latitude"
-                            class="form-control"
-                            step="any"
-                            value="<?= e((string) ($structure['latitude'] ?? '')) ?>"
-                        >
-                    </div>
-
-                    <div class="col-md-6">
-                        <label for="structure-longitude" class="form-label">
-                            Долгота
-                        </label>
-
-                        <input
-                            type="number"
-                            id="structure-longitude"
-                            name="longitude"
-                            class="form-control"
-                            step="any"
-                            value="<?= e((string) ($structure['longitude'] ?? '')) ?>"
-                        >
-                    </div>
-                </div>
-
-                <div class="mb-4">
-                    <label class="form-label">
-                        Точка на карте
-                    </label>
-
-                    <div
-                        id="structure-coordinate-map"
-                        style="width: 100%; height: 420px;"
-                    ></div>
-
-                    <div class="form-text">
-                        Нажмите на карту, чтобы изменить координаты конструкции.
-                    </div>
-                </div>
+            
 
                 <div class="mb-4">
                     <div class="form-check form-switch">
@@ -178,35 +133,7 @@ ob_start();
                                 <?= e((string) ($surface['name'] ?? '')) ?>
                             </strong>
 
-                            <?php if (($surface['kind'] ?? '') === 'dynamic'): ?>
-                                <div class="mt-2">
-                                    Сменяющаяся конструкция
-                                </div>
-                            <?php else: ?>
-                                <div class="mt-3">
-                                    <label
-                                        for="surface-status-<?= e((string) ($surface['id'] ?? '')) ?>"
-                                        class="form-label"
-                                    >
-                                        Статус
-                                    </label>
-
-                                    <select
-                                        id="surface-status-<?= e((string) ($surface['id'] ?? '')) ?>"
-                                        name="surface_status[<?= e((string) ($surface['id'] ?? '')) ?>]"
-                                        class="form-select"
-                                    >
-                                        <?php foreach ($structureStatuses as $statusKey => $statusName): ?>
-                                            <option
-                                                value="<?= e($statusKey) ?>"
-                                                <?= ($surface['status'] ?? '') === $statusKey ? 'selected' : '' ?>
-                                            >
-                                                <?= e($statusName) ?>
-                                            </option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-                            <?php endif; ?>
+                            
 
                             <div class="mt-3">
                                 <label
@@ -253,6 +180,52 @@ ob_start();
                             </div>
                         </div>
                     <?php endforeach; ?>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="structure-latitude" class="form-label">
+                            Широта
+                        </label>
+
+                        <input
+                            type="number"
+                            id="structure-latitude"
+                            name="latitude"
+                            class="form-control"
+                            step="any"
+                            value="<?= e((string) ($structure['latitude'] ?? '')) ?>"
+                        >
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="structure-longitude" class="form-label">
+                            Долгота
+                        </label>
+
+                        <input
+                            type="number"
+                            id="structure-longitude"
+                            name="longitude"
+                            class="form-control"
+                            step="any"
+                            value="<?= e((string) ($structure['longitude'] ?? '')) ?>"
+                        >
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">
+                        Точка на карте
+                    </label>
+
+                    <div
+                        id="structure-coordinate-map"
+                        style="width: 100%; height: 420px;"
+                    ></div>
+
+                    <div class="form-text">
+                        Нажмите на карту, чтобы изменить координаты конструкции.
+                    </div>
                 </div>
 
                 <button

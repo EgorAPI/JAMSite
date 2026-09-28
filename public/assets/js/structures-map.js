@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const structureTypes = window.structureTypes ?? {};
 
-    const structureStatuses = window.structureStatuses ?? {};
-
     const legend = document.getElementById(
         'structures-legend'
     );
@@ -76,12 +74,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    const map = L.map('structures-map', {
-        attributionControl: false
-    }).setView(
+    const map = L.map('structures-map').setView(
         [53.7212, 91.4424],
         13
     );
+
+    map.attributionControl.setPrefix(false);
 
     L.tileLayer(
         'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -109,6 +107,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 icon: createStructureIcon(structure.type)
             }
         ).addTo(map);
+
+        marker.bindPopup(
+            '№ ' + structure.number,
+            {
+                closeButton: false,
+                offset: [0, -8]
+            }
+        );
 
         marker.on('click', function () {
             const typeName =
@@ -139,12 +145,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     surfaceElement.textContent =
                         surface.name + ' — Сменяющаяся конструкция';
                 } else {
-                    const statusName =
-                        structureStatuses[surface.status]
-                        ?? surface.status;
 
                     surfaceElement.textContent =
-                        surface.name + ' — ' + statusName;
+                        surface.name;
                 }
 
                 panelContent.appendChild(surfaceElement);
