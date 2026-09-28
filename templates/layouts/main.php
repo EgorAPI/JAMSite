@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/assets/images/logo/logo.webp" type="image/webp">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
 
     <title><?= e($title ?? 'Рекламное агентство «Джем»') ?></title>
     <?php if (!empty($robots)): ?>

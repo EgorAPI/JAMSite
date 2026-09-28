@@ -119,134 +119,164 @@
         <div class="row g-4">
 
             <div class="col-md-6 col-lg-4">
-                <article class="h-100">
-                    <div class="ratio ratio-4x3 mb-3">
-                        <img
-                            src="/assets/images/services/service-banners.webp"
-                            alt="Печать и монтаж рекламных баннеров"
-                            class="service-image"
-                            loading="lazy"
-                        >
-                    </div>
+                <a
+                    href="/services/large-format-printing"
+                    class="d-block h-100 text-reset text-decoration-none"
+                >
+                    <article class="h-100">
+                        <div class="ratio ratio-4x3 mb-3">
+                            <img
+                                src="/assets/images/services/service-banners.webp"
+                                alt="Широкоформатная печать баннеров в Абакане"
+                                class="service-image"
+                                loading="lazy"
+                            >
+                        </div>
 
-                    <h3 class="h4">
-                        Баннеры
-                    </h3>
+                        <h3 class="h4">
+                            Баннеры
+                        </h3>
 
-                    <p class="mb-0">
-                        Печать и монтаж рекламных баннеров.
-                    </p>
-                </article>
+                        <p class="mb-0">
+                            Печать и монтаж рекламных баннеров.
+                        </p>
+                    </article>
+                </a>
             </div>
 
 
             <div class="col-md-6 col-lg-4">
-                <article class="h-100">
-                    <div class="ratio ratio-4x3 mb-3">
-                        <img
-                            src="/assets/images/services/service-signs.webp"
-                            alt="Изготовление рекламных вывесок"
-                            class="service-image"
-                            loading="lazy"
-                        >
-                    </div>
+                <a
+                    href="/services/signs"
+                    class="d-block h-100 text-reset text-decoration-none"
+                >
+                    <article class="h-100">
+                        <div class="ratio ratio-4x3 mb-3">
+                            <img
+                                src="/assets/images/services/service-signs.webp"
+                                alt="Изготовление рекламных вывесок"
+                                class="service-image"
+                                loading="lazy"
+                            >
+                        </div>
 
-                    <h3 class="h4">
-                        Вывески
-                    </h3>
+                        <h3 class="h4">
+                            Вывески
+                        </h3>
 
-                    <p class="mb-0">
-                        Обычные и световые рекламные вывески.
-                    </p>
-                </article>
+                        <p class="mb-0">
+                            Обычные и световые рекламные вывески.
+                        </p>
+                    </article>
+                </a>
             </div>
 
 
             <div class="col-md-6 col-lg-4">
-                <article class="h-100">
-                    <div class="ratio ratio-4x3 mb-3">
-                        <img
-                            src="/assets/images/services/service-cars.webp"
-                            alt="Брендирование автомобилей"
-                            class="service-image"
-                            loading="lazy"
-                        >
-                    </div>
+                <a
+                    href="/services/car-branding"
+                    class="d-block h-100 text-reset text-decoration-none"
+                >
+                    <article class="h-100">
+                        <div class="ratio ratio-4x3 mb-3">
+                            <img
+                                src="/assets/images/services/service-cars.webp"
+                                alt="Брендирование автомобилей в Абакане"
+                                class="service-image"
+                                loading="lazy"
+                            >
+                        </div>
 
-                    <h3 class="h4">
-                        Брендирование авто
-                    </h3>
+                        <h3 class="h4">
+                            Брендирование авто
+                        </h3>
 
-                    <p class="mb-0">
-                        Рекламное оформление автомобилей.
-                    </p>
-                </article>
+                        <p class="mb-0">
+                            Рекламное оформление автомобилей.
+                        </p>
+                    </article>
+                </a>
             </div>
 
 
             <div class="col-md-6 col-lg-4">
-                <article class="h-100">
-                    <div class="ratio ratio-4x3 mb-3">
-                        <img
-                            src="/assets/images/services/service-plates.webp"
-                            alt="Изготовление рекламных и информационных табличек"
-                            class="service-image"
-                            loading="lazy"
-                        >
-                    </div>
+                <a
+                    href="/services/plates"
+                    class="d-block h-100 text-reset text-decoration-none"
+                >
+                    <article class="h-100">
+                        <div class="ratio ratio-4x3 mb-3">
+                            <img
+                                src="/assets/images/services/service-plates.webp"
+                                alt="Изготовление табличек и режимников в Абакане"
+                                class="service-image"
+                                loading="lazy"
+                            >
+                        </div>
 
-                    <h3 class="h4">
-                        Таблички
-                    </h3>
+                        <h3 class="h4">
+                            Таблички
+                        </h3>
 
-                    <p class="mb-0">
-                        Информационные и рекламные таблички.
-                    </p>
-                </article>
+                        <p class="mb-0">
+                            Информационные и рекламные таблички.
+                        </p>
+                    </article>
+                </a>
             </div>
 
 
             <div class="col-md-6 col-lg-4">
-                <article class="h-100">
-                    <div class="ratio ratio-4x3 mb-3">
-                        <img
-                            src="/assets/images/services/service-stands.webp"
-                            alt="Изготовление рекламных и информационных стендов"
-                            class="service-image"
-                            loading="lazy"
-                        >
-                    </div>
+                <a
+                    href="/services/stands"
+                    class="d-block h-100 text-reset text-decoration-none"
+                >
+                    <article class="h-100">
+                        <div class="ratio ratio-4x3 mb-3">
+                            <img
+                                src="/assets/images/services/service-stands.webp"
+                                alt="Изготовление информационных стендов в Абакане"
+                                class="service-image"
+                                loading="lazy"
+                            >
+                        </div>
 
-                    <h3 class="h4">
-                        Стенды
-                    </h3>
+                        <h3 class="h4">
+                            Стенды
+                        </h3>
 
-                    <p class="mb-0">
-                        Изготовление информационных и рекламных стендов.
-                    </p>
-                </article>
+                        <p class="mb-0">
+                            Изготовление информационных и рекламных стендов.
+                        </p>
+                    </article>
+                </a>
             </div>
 
 
             <div class="col-md-6 col-lg-4">
-                <article class="h-100">
-                    <div class="ratio ratio-4x3 mb-3">
-                        <img
-                            src="/assets/images/services/service-print.webp"
-                            alt="Печать на одежде"
-                            class="service-image"
-                            loading="lazy"
-                        >
-                    </div>
+                <a
+                    href="/services/clothing-print"
+                    class="d-block h-100 text-reset text-decoration-none"
+                >
+                    <article class="h-100">
+                        <div class="ratio ratio-4x3 mb-3">
+                            <img
+                                src="/assets/images/services/service-print.webp"
+                                alt="Печать на одежде в Абакане"
+                                class="service-image"
+                                loading="lazy"
+                            >
+                        </div>
 
-                    <h3 class="h4">
-                        Печать на одежде
-                    </h3>
+                        <h3 class="h4">
+                            Печать на одежде
+                        </h3>
 
-                    <p class="mb-0">
-                        Печать на одежде и другой рекламной продукции.
-                    </p>
-                </article>
+                        <p class="mb-0">
+                            Печать на одежде и другой рекламной продукции.
+                        </p>
+                    </article>
+                </a>
             </div>
 
         </div>

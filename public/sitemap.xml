@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://jam-reklama.ru</loc>
+        <loc>https://jam-reklama.ru/</loc>
+    </url>
+
+    <url>
+        <loc>https://jam-reklama.ru/services/signs</loc>
+    </url>
+
+    <url>
+        <loc>https://jam-reklama.ru/services/large-format-printing</loc>
+    </url>
+
+    <url>
+        <loc>https://jam-reklama.ru/services/car-branding</loc>
+    </url>
+
+    <url>
+        <loc>https://jam-reklama.ru/services/plates</loc>
+    </url>
+
+    <url>
+        <loc>https://jam-reklama.ru/services/stands</loc>
+    </url>
+
+    <url>
+        <loc>https://jam-reklama.ru/services/clothing-print</loc>
+    </url>
+
+    <url>
+        <loc>https://jam-reklama.ru/structures</loc>
     </url>
 
     <url>
         <loc>https://jam-reklama.ru/portfolio</loc>
+    </url>
+
+    <url>
+        <loc>https://jam-reklama.ru/contacts</loc>
     </url>
 
     <url>
