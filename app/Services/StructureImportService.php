@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Repositories\Json\StructureRepository;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
 final class StructureImportService
@@ -332,92 +333,14 @@ final class StructureImportService
         return $structures;
     }
 
-    private function createBackup(string $structuresFile, string $backupDirectory): ?string
-    {
-        if (!is_file($structuresFile)) {
-            return null;
-        }
-
-        if (!is_dir($backupDirectory)) {
-            throw new \RuntimeException(
-                'Папка резервных копий не найдена.'
-            );
-        }
-
-        $backupFile = $backupDirectory
-            . '/structures-'
-            . date('Y-m-d-His')
-            . '-'
-            . bin2hex(random_bytes(3))
-            . '.json';
-
-        if (!copy($structuresFile, $backupFile)) {
-            throw new \RuntimeException(
-                'Не удалось создать резервную копию текущих конструкций.'
-            );
-        }
-
-        return $backupFile;
-    }
-
-    private function replaceStructuresFile(
-        string $structuresFile,
-        array $structures
-    ): void {
-        try {
-            $json = json_encode(
-                $structures,
-                JSON_PRETTY_PRINT
-                | JSON_UNESCAPED_UNICODE
-                | JSON_THROW_ON_ERROR
-            );
-        } catch (\JsonException $exception) {
-            throw new \RuntimeException(
-                'Не удалось подготовить новые данные конструкций.'
-            );
-        }
-
-        $temporaryFile = $structuresFile
-            . '.import-'
-            . bin2hex(random_bytes(4))
-            . '.tmp';
-
-        if (file_put_contents($temporaryFile, $json . PHP_EOL, LOCK_EX) === false) {
-            throw new \RuntimeException(
-                'Не удалось записать временный файл импорта.'
-            );
-        }
-
-        if (!rename($temporaryFile, $structuresFile)) {
-            @unlink($temporaryFile);
-
-            throw new \RuntimeException(
-                'Не удалось заменить файл конструкций.'
-            );
-        }
-    }
-
     public function import(
         string $excelFile,
         string $structuresFile,
         string $backupDirectory
     ): int {
-        // Сначала полностью читаем и проверяем Excel.
-        // До завершения этого этапа текущие данные не изменяются.
         $structures = $this->prepare($excelFile);
-
-        // Только после успешной проверки всего Excel
-        // сохраняем текущую базу.
-        $this->createBackup(
-            $structuresFile,
-            $backupDirectory
-        );
-
-        // Полностью заменяем structures.json новым каталогом.
-        $this->replaceStructuresFile(
-            $structuresFile,
-            $structures
-        );
+        $repository = new StructureRepository($structuresFile);
+        $repository->replaceAll($structures, $backupDirectory);
 
         return count($structures);
     }

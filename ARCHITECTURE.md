@@ -34,7 +34,7 @@ Templates не читают JSON напрямую.
 
 - `GET /`
 - `GET /portfolio`
-- `GET /contacts`
+- `GET /contacts` → `/#contact-form`
 - `GET /privacy`
 - `POST /contact-request`
 

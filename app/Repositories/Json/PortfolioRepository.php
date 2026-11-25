@@ -41,8 +41,6 @@ final class PortfolioRepository extends JsonRepository implements PortfolioRepos
 
     public function create(array $data): array
     {
-        $items = $this->all(false);
-
         $item = [
             'id' => $data['id'],
             'title' => $data['title'],
@@ -53,30 +51,10 @@ final class PortfolioRepository extends JsonRepository implements PortfolioRepos
             'sort' => (int) ($data['sort'] ?? 0),
         ];
 
-        $items[] = $item;
-
-        $this->write($items);
-
-        return $item;
+        return $this->appendItem($item);
     }
     public function update(string $id, array $data): ?array
     {
-        $items = $this->all(false);
-
-        foreach ($items as $index => $item) {
-            if (($item['id'] ?? null) !== $id) {
-                continue;
-            }
-
-            $updatedItem = array_merge($item, $data);
-
-            $items[$index] = $updatedItem;
-
-            $this->write($items);
-
-            return $updatedItem;
-        }
-
-        return null;
+        return $this->updateCurrent($id, static fn (array $item): array => array_merge($item, $data));
     }
 }

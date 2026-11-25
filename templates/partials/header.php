@@ -7,8 +7,8 @@
         src="/assets/images/logo/logo.webp"
         alt="Рекламное агентство «Джем»"
         class="site-logo__image"
-        width="150"
-        height="60"
+        width="600"
+        height="238"
     >
 </a>
 

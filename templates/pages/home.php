@@ -104,6 +104,89 @@
 </section>
 
 
+<section class="placement py-5" aria-labelledby="placement-title">
+    <div class="container">
+        <div class="placement__heading mb-4">
+            <h2 id="placement-title" class="display-6 fw-bold mb-2">
+                Размещение наружной рекламы в Абакане
+            </h2>
+            <p class="mb-0">
+                Подберём рекламные конструкции и локации для вашего бизнеса.
+            </p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-3 g-lg-4">
+            <div class="col">
+                <article class="placement-card h-100">
+                    <img
+                        src="/assets/images/placement/billboard.webp"
+                        alt="Широкий рекламный щит на опоре вдоль дороги"
+                        class="placement-card__image"
+                        width="880"
+                        height="528"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <div class="placement-card__body">
+                        <h3 class="h5 fw-bold mb-1">Билборды</h3>
+                        <p class="mb-0">
+                            Крупноформатная реклама на оживлённых магистралях с максимальным охватом аудитории.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col">
+                <article class="placement-card h-100">
+                    <img
+                        src="/assets/images/placement/cityboard.webp"
+                        alt="Рекламная панель на разделительной полосе городской улицы"
+                        class="placement-card__image"
+                        width="880"
+                        height="528"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <div class="placement-card__body">
+                        <h3 class="h5 fw-bold mb-1">Ситиборды</h3>
+                        <p class="mb-0">
+                            Эффективное размещение в ключевых районах города с высоким пешеходным и автомобильным трафиком.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col">
+                <article class="placement-card h-100">
+                    <img
+                        src="/assets/images/placement/cityscroller.webp"
+                        alt="Вертикальный рекламный лайтбокс рядом с остановкой"
+                        class="placement-card__image"
+                        width="880"
+                        height="528"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <div class="placement-card__body">
+                        <h3 class="h5 fw-bold mb-1">Ситискроллеры</h3>
+                        <p class="mb-0">
+                            Динамичное размещение в пешеходных зонах, у остановок и в местах высокой активности.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="mt-4 text-center">
+            <a class="placement__map-link" href="/structures">
+                <span class="placement__pin" aria-hidden="true"></span>
+                Карта рекламных конструкций
+            </a>
+        </div>
+    </div>
+</section>
+
+
 <section id="services" class="py-5" aria-labelledby="services-title">
     <div class="container">
 
@@ -473,6 +556,14 @@
                             <a href="mailto:<?= e($settings['email']) ?>">
                                 <?= e($settings['email']) ?>
                             </a>
+                        </p>
+                    <?php endif; ?>
+
+                    <?php if (!empty($settings['advertising_email'])): ?>
+                        <p>
+                            <a href="mailto:<?= e($settings['advertising_email']) ?>">
+                                <?= e($settings['advertising_email']) ?>
+                            </a> — размещение рекламы
                         </p>
                     <?php endif; ?>
 

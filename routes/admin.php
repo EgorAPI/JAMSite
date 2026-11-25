@@ -888,7 +888,10 @@ return [
                 $app['config']['paths']['data'] . '/categories.json'
             );
 
-            $category = $categories->find($id);
+            $category = $categories->updateCurrent($id, static function (array $item): array {
+                $item['active'] = empty($item['active']);
+                return $item;
+            });
 
             if ($category === null) {
                 http_response_code(404);
@@ -896,10 +899,6 @@ return [
                 echo 'Категория не найдена.';
                 return;
             }
-
-            $categories->update($id, [
-                'active' => !empty($category['active']) ? false : true,
-            ]);
 
             header('Location: /admin/categories');
             exit;
@@ -1192,7 +1191,10 @@ return [
                 $app['config']['paths']['data'] . '/slides.json'
             );
 
-            $slide = $slides->find($id);
+            $slide = $slides->updateCurrent($id, static function (array $item): array {
+                $item['active'] = empty($item['active']);
+                return $item;
+            });
 
             if ($slide === null) {
                 http_response_code(404);
@@ -1200,10 +1202,6 @@ return [
                 echo 'Слайд не найден.';
                 return;
             }
-
-            $slides->update($id, [
-                'active' => !empty($slide['active']) ? false : true,
-            ]);
 
             header('Location: /admin/slides');
             exit;

@@ -364,10 +364,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     );
                 }
 
+                const {is_visible: isVisible} = await response.json();
+                const publicationRejected = toggle.checked && !isVisible;
+                toggle.checked = isVisible;
+
                 if (label) {
-                    label.textContent = toggle.checked
+                    label.textContent = isVisible
                         ? 'Опубликована'
                         : 'Скрыта';
+                }
+
+                if (publicationRejected) {
+                    alert('Укажите широту и долготу перед публикацией.');
                 }
             } catch (error) {
                 toggle.checked = previousChecked;

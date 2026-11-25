@@ -84,7 +84,9 @@ return [
         ),
         '/portfolio' => PortfolioController::class,
         '/structures' => StructureController::class,
-        '/contacts' => static fn (array $app) => render('pages/contacts', ['title' => 'Контакты — «Джем»']),
+        '/contacts' => static function (): void {
+            header('Location: /#contact-form', true, 301);
+        },
         '/privacy' => static fn (array $app) => render(
             'pages/privacy',
             [

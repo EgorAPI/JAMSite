@@ -55,57 +55,14 @@ final class StructureService
             );
         }
 
-        foreach ($this->structures->all(false) as $existingStructure) {
-            if (
-                (string) ($existingStructure['number'] ?? '') === $number
-                && (string) ($existingStructure['type'] ?? '') === $type
-            ) {
-                throw new \InvalidArgumentException(
-                    'Конструкция с таким номером и типом уже существует.'
-                );
-            }
-        }
-
         if ($locationDescription === '') {
             throw new \InvalidArgumentException(
                 'Structure location description is required.'
             );
         }
 
-        $latitude = null;
-        $longitude = null;
-
-        if (isset($data['latitude']) && $data['latitude'] !== '') {
-            if (!is_numeric($data['latitude'])) {
-                throw new \InvalidArgumentException(
-                    'Latitude must be numeric.'
-                );
-            }
-
-            $latitude = (float) $data['latitude'];
-
-            if ($latitude < -90 || $latitude > 90) {
-                throw new \InvalidArgumentException(
-                    'Latitude must be between -90 and 90.'
-                );
-            }
-        }
-
-        if (isset($data['longitude']) && $data['longitude'] !== '') {
-            if (!is_numeric($data['longitude'])) {
-                throw new \InvalidArgumentException(
-                    'Longitude must be numeric.'
-                );
-            }
-
-            $longitude = (float) $data['longitude'];
-
-            if ($longitude < -180 || $longitude > 180) {
-                throw new \InvalidArgumentException(
-                    'Longitude must be between -180 and 180.'
-                );
-            }
-        }
+        $latitude = $this->coordinate($data['latitude'] ?? null, 'Latitude', 90);
+        $longitude = $this->coordinate($data['longitude'] ?? null, 'Longitude', 180);
         if (!isset($this->config['types'][$type])) {
             throw new \InvalidArgumentException('Unknown structure type: ' . $type);
         }
@@ -140,166 +97,67 @@ final class StructureService
 
     public function update(string $id, array $data): ?array
     {
-        $structure = $this->structures->find($id);
+        return $this->structures->updateCurrent($id, function (array $structure) use ($data): array {
+            if (array_key_exists('number', $data)) {
+                $structure['number'] = trim((string) $data['number']);
 
-        if ($structure === null) {
+                if ($structure['number'] === '') {
+                    throw new \InvalidArgumentException('Structure number is required.');
+                }
+            }
+
+            if (array_key_exists('location_description', $data)) {
+                $structure['location_description'] = trim((string) $data['location_description']);
+
+                if ($structure['location_description'] === '') {
+                    throw new \InvalidArgumentException('Structure location description is required.');
+                }
+            }
+
+            if (array_key_exists('latitude', $data)) {
+                $structure['latitude'] = $this->coordinate($data['latitude'], 'Latitude', 90);
+            }
+            if (array_key_exists('longitude', $data)) {
+                $structure['longitude'] = $this->coordinate($data['longitude'], 'Longitude', 180);
+            }
+
+            if (array_key_exists('is_visible', $data)) {
+                $structure['is_visible'] = (bool) $data['is_visible'];
+            }
+            if (!isset($structure['latitude'], $structure['longitude'])) {
+                $structure['is_visible'] = false;
+            }
+
+            if (isset($data['type']) && $data['type'] !== ($structure['type'] ?? null)) {
+                $structure['surfaces'] = $this->createSurfacesForType($data['type']);
+                $structure['type'] = $data['type'];
+            }
+
+            return $structure;
+        });
+    }
+
+    private function coordinate(mixed $value, string $name, int $limit): ?float
+    {
+        if ($value === null || $value === '') {
             return null;
         }
 
-        $allowedFields = [
-            'number',
-            'location_description',
-            'latitude',
-            'longitude',
-            'is_visible',
-        ];
-
-        if (array_key_exists('number', $data)) {
-        $number = trim((string) $data['number']);
-
-        if ($number === '') {
-            throw new \InvalidArgumentException(
-                'Structure number is required.'
-            );
+        if (!is_numeric($value)) {
+            throw new \InvalidArgumentException("$name must be numeric.");
         }
 
-        $currentType = (string) ($structure['type'] ?? '');
-
-        foreach ($this->structures->all(false) as $existingStructure) {
-            if (
-                ($existingStructure['id'] ?? '') !== $id
-                && (string) ($existingStructure['number'] ?? '') === $number
-                && (string) ($existingStructure['type'] ?? '') === $currentType
-            ) {
-                throw new \InvalidArgumentException(
-                    'Конструкция с таким номером и типом уже существует.'
-                );
-            }
+        $coordinate = (float) $value;
+        if (!is_finite($coordinate) || $coordinate < -$limit || $coordinate > $limit) {
+            throw new \InvalidArgumentException("$name must be between -$limit and $limit.");
         }
 
-        $data['number'] = $number;
-    }
-
-    if (array_key_exists('location_description', $data)) {
-        $locationDescription = trim(
-            (string) $data['location_description']
-        );
-
-        if ($locationDescription === '') {
-            throw new \InvalidArgumentException(
-                'Structure location description is required.'
-            );
-        }
-
-        $data['location_description'] = $locationDescription;
-    }
-
-        if (array_key_exists('latitude', $data)) {
-        if (!is_numeric($data['latitude'])) {
-            throw new \InvalidArgumentException(
-                'Valid latitude is required.'
-            );
-        }
-
-        $latitude = (float) $data['latitude'];
-
-        if ($latitude < -90 || $latitude > 90) {
-            throw new \InvalidArgumentException(
-                'Latitude must be between -90 and 90.'
-            );
-        }
-    }
-
-    if (array_key_exists('longitude', $data)) {
-        if (!is_numeric($data['longitude'])) {
-            throw new \InvalidArgumentException(
-                'Valid longitude is required.'
-            );
-        }
-
-        $longitude = (float) $data['longitude'];
-
-        if ($longitude < -180 || $longitude > 180) {
-            throw new \InvalidArgumentException(
-                'Longitude must be between -180 and 180.'
-            );
-        }
-    }
-
-        $finalLatitude = array_key_exists('latitude', $data)
-            ? (float) $data['latitude']
-            : ($structure['latitude'] ?? null);
-
-        $finalLongitude = array_key_exists('longitude', $data)
-            ? (float) $data['longitude']
-            : ($structure['longitude'] ?? null);
-
-        if (
-            !empty($data['is_visible'])
-            && ($finalLatitude === null || $finalLongitude === null)
-        ) {
-            $data['is_visible'] = false;
-        }
-
-        $updateData = [];
-
-        foreach ($allowedFields as $field) {
-            if (!array_key_exists($field, $data)) {
-                continue;
-            }
-
-            $updateData[$field] = match ($field) {
-                'number', 'location_description' => (string) $data[$field],
-                'latitude', 'longitude' => (float) $data[$field],
-                'is_visible' => (bool) $data[$field],
-                default => $data[$field],
-            };
-        }
-
-        return $this->structures->update($id, $updateData);
+        return $coordinate;
     }
 
     public function delete(string $id): bool
     {
         return $this->structures->delete($id);
-    }
-
-    public function changeType(string $id, string $newType): ?array
-    {
-        $structure = $this->structures->find($id);
-
-        if ($structure === null) {
-            return null;
-        }
-
-        if (!isset($this->config['types'][$newType])) {
-            throw new \InvalidArgumentException(
-                'Unknown structure type: ' . $newType
-            );
-        }
-
-        if (($structure['type'] ?? null) === $newType) {
-            return $structure;
-        }
-
-        $number = (string) ($structure['number'] ?? '');
-
-        foreach ($this->structures->all(false) as $existingStructure) {
-            if (
-                ($existingStructure['id'] ?? '') !== $id
-                && (string) ($existingStructure['number'] ?? '') === $number
-                && (string) ($existingStructure['type'] ?? '') === $newType
-            ) {
-                throw new \InvalidArgumentException(
-                    'Конструкция с таким номером и типом уже существует.'
-                );
-            }
-        }
-
-        return $this->structures->update($id, [
-            'type' => $newType,
-            'surfaces' => $this->createSurfacesForType($newType),
-        ]);
     }
 
     public function updateSurfaceStatus(
@@ -309,37 +167,20 @@ final class StructureService
     ): ?array {
         if (!isset($this->config['statuses'][$status])) {
             throw new \InvalidArgumentException(
-                'Unknown surface status: ' . $status
+                'Unknown structure status: ' . $status
             );
         }
 
-        $structure = $this->structures->find($structureId);
-
-        if ($structure === null) {
-            return null;
-        }
-
-        $surfaces = $structure['surfaces'] ?? [];
-
-        foreach ($surfaces as $index => $surface) {
-            if (($surface['id'] ?? null) !== $surfaceId) {
-                continue;
-            }
-
+        return $this->updateSurface($structureId, $surfaceId, static function (array $surface) use ($status): array {
             if (($surface['kind'] ?? null) !== 'standard') {
                 throw new \InvalidArgumentException(
                     'Status can only be changed for standard surfaces.'
                 );
             }
 
-            $surfaces[$index]['status'] = $status;
-
-            return $this->structures->update($structureId, [
-                'surfaces' => $surfaces,
-            ]);
-        }
-
-        return null;
+            $surface['status'] = $status;
+            return $surface;
+        });
     }
 
     public function updateSurfaceImage(
@@ -347,28 +188,24 @@ final class StructureService
         string $surfaceId,
         ?string $image
     ): ?array {
-        $structure = $this->structures->find($structureId);
+        return $this->updateSurface($structureId, $surfaceId, static function (array $surface) use ($image): array {
+            $surface['image'] = $image;
+            return $surface;
+        });
+    }
 
-        if ($structure === null) {
-            return null;
-        }
-
-        foreach ($structure['surfaces'] as &$surface) {
-            if (($surface['id'] ?? '') !== $surfaceId) {
-                continue;
+    private function updateSurface(string $structureId, string $surfaceId, callable $change): ?array
+    {
+        return $this->structures->updateCurrent($structureId, static function (array $structure) use ($surfaceId, $change): ?array {
+            foreach ($structure['surfaces'] ?? [] as $index => $surface) {
+                if (($surface['id'] ?? null) === $surfaceId) {
+                    $structure['surfaces'][$index] = $change($surface);
+                    return $structure;
+                }
             }
 
-            $surface['image'] = $image;
-
-            return $this->structures->update(
-                $structureId,
-                [
-                    'surfaces' => $structure['surfaces'],
-                ]
-            );
-        }
-
-        return null;
+            return null;
+        });
     }
 
     public function hasFreeSurface(array $structure): bool

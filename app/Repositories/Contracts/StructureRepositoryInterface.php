@@ -14,5 +14,8 @@ interface StructureRepositoryInterface
 
     public function update(string $id, array $data): ?array;
 
+    /** @param callable(array): ?array $change */
+    public function updateCurrent(string $id, callable $change): ?array;
+
     public function delete(string $id): bool;
 }

@@ -3,7 +3,7 @@ const header = document.querySelector('.site-header');
 
 if (header) {
     const updateHeader = () => {
-        header.classList.toggle('is-scrolled', window.scrollY > 24);
+        header.classList.toggle('is-scrolled', window.scrollY > 0);
     };
 
     updateHeader();

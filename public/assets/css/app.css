@@ -11,7 +11,7 @@
 
     --jam-radius: 10px;
 
-    --jam-header-height: 84px;
+    --jam-header-height: 126px;
     --jam-header-height-compact: 66px;
 }
 
@@ -22,6 +22,8 @@
 
 html {
     scroll-behavior: smooth;
+    /* Keep the first scroll offset when the sticky header shrinks. */
+    overflow-anchor: none;
 }
 
 body {
@@ -45,6 +47,9 @@ body {
 ========================= */
 
 .site-header {
+    --jam-header-logo-height: 110px;
+    --jam-header-logo-height-compact: 44px;
+
     position: sticky;
     top: 0;
     z-index: 1030;
@@ -94,13 +99,24 @@ body {
     display: block;
 
     width: auto;
-    height: 44px;
+    max-width: 100%;
 
     object-fit: contain;
 }
-@media (max-width: 991.98px) {
-    .site-logo__image {
-        height: 36px;
+
+.site-header .site-logo__image {
+    height: var(--jam-header-logo-height);
+    transition: height 0.25s ease;
+}
+
+.site-header.is-scrolled .site-logo__image {
+    height: var(--jam-header-logo-height-compact);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header .navbar,
+    .site-header .site-logo__image {
+        transition: none;
     }
 }
 
@@ -496,15 +512,13 @@ body {
 
 @media (max-width: 991.98px) {
     :root {
-        --jam-header-height: 64px;
+        --jam-header-height: 94px;
+        --jam-header-height-compact: 64px;
     }
 
-    .site-header .navbar {
-        min-height: var(--jam-header-height);
-    }
-
-    .site-header.is-scrolled .navbar {
-        min-height: var(--jam-header-height);
+    .site-header {
+        --jam-header-logo-height: 80px;
+        --jam-header-logo-height-compact: 36px;
     }
 
     .site-header .navbar-collapse {
@@ -606,6 +620,97 @@ body {
 /* =========================
    service
 ========================= */
+
+.placement {
+    --placement-accent: #e74716;
+
+    background:
+        radial-gradient(ellipse at 119% 43%, #fce5df 0 21%, transparent 21.2%),
+        linear-gradient(116deg, #fce5df 1.15rem, transparent 1.2rem) top left / 5rem 4rem no-repeat,
+        #faf8f8;
+}
+
+.placement__heading {
+    position: relative;
+    padding-inline-start: 2rem;
+}
+
+.placement__heading::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0.16em;
+    inset-inline-start: 0.2em;
+    width: 0.25em;
+    height: 0.92em;
+    background: var(--placement-accent);
+    transform: skew(-18deg);
+    font-size: min(2.5rem, calc(1.375rem + 1.5vw));
+}
+
+.placement-card {
+    overflow: hidden;
+    background: var(--jam-bg);
+    border: 1px solid var(--jam-border);
+    border-radius: var(--jam-radius);
+    box-shadow: 0 0.35rem 1rem rgba(29, 22, 20, 0.06);
+}
+
+.placement-card__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 3;
+    object-fit: cover;
+}
+
+.placement-card__body {
+    padding: 0.9rem 1rem 1.2rem;
+    line-height: 1.45;
+}
+
+.placement__map-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    min-height: 44px;
+    max-width: 100%;
+    padding: 0.55rem 1.15rem;
+    border: 1px solid var(--placement-accent);
+    border-radius: var(--jam-radius);
+    color: var(--jam-text);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.placement__map-link:hover,
+.placement__map-link:focus-visible {
+    color: var(--jam-text);
+    background: #ffede7;
+}
+
+.placement__map-link:focus-visible {
+    outline: 2px solid var(--placement-accent);
+    outline-offset: 3px;
+}
+
+.placement__pin {
+    position: relative;
+    flex: 0 0 0.9rem;
+    height: 0.9rem;
+    border: 2px solid var(--placement-accent);
+    border-radius: 50% 50% 50% 0;
+    transform: translateY(-0.11rem) rotate(-45deg);
+}
+
+.placement__pin::after {
+    content: "";
+    position: absolute;
+    inset: 29%;
+    background: var(--placement-accent);
+    border-radius: 50%;
+}
 
 .service-image {
     width: 100%;
@@ -788,7 +893,14 @@ body {
     padding-block: 4rem 3rem;
 }
 
+.site-footer .site-logo {
+    max-width: 100%;
+    margin-right: 0;
+}
 
+.site-footer .site-logo__image {
+    height: 110px;
+}
 
 .site-footer__logo:hover,
 .site-footer__logo:focus {
@@ -905,6 +1017,10 @@ body {
 @media (max-width: 767.98px) {
     .site-footer__top {
         padding-block: 3rem 2rem;
+    }
+
+    .site-footer .site-logo__image {
+        height: 90px;
     }
 
     .site-footer__description {

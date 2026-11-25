@@ -151,15 +151,8 @@ final class AdminStructureController
 
         $newType = trim((string) ($_POST['type'] ?? ''));
 
-        $typeChanged = (
-            $newType !== ''
-            && $newType !== ($structure['type'] ?? '')
-        );
-
-
-
         try {
-            $service->update(
+            $updated = $service->update(
                 $id,
                 [
                     'number' => trim((string) ($_POST['number'] ?? '')),
@@ -169,12 +162,12 @@ final class AdminStructureController
                     'latitude' => $_POST['latitude'] ?? '',
                     'longitude' => $_POST['longitude'] ?? '',
                     'is_visible' => isset($_POST['is_visible']),
+                    'type' => $newType !== '' ? $newType : null,
                 ]
             );
         } catch (\InvalidArgumentException $exception) {
             $error = $exception->getMessage();
 
-            $structure = $service->find($id);
             $structureTypes = $app['config']['structures']['types'];
             $structureStatuses = $app['config']['structures']['statuses'];
 
@@ -184,9 +177,13 @@ final class AdminStructureController
             return;
         }
 
-        if ($typeChanged) {
-            $service->changeType($id, $newType);
+        if ($updated === null) {
+            http_response_code(404);
+            echo 'Конструкция не найдена.';
+            return;
+        }
 
+        if (($updated['type'] ?? null) !== ($structure['type'] ?? null)) {
             foreach (($structure['surfaces'] ?? []) as $oldSurface) {
                 $oldImagePath = $oldSurface['image'] ?? null;
 
@@ -195,9 +192,6 @@ final class AdminStructureController
                     $app['config']['paths']['uploads']
                 );
             }
-        }
-
-        if ($typeChanged) {
             header(
                 'Location: /admin/structures/edit?id=' . urlencode($id)
             );
@@ -337,11 +331,13 @@ final class AdminStructureController
             $app['config']['structures']
         );
 
-        $updated = $service->updateSurfaceStatus(
-            $structureId,
-            $surfaceId,
-            $status
-        );
+        try {
+            $updated = $service->updateSurfaceStatus($structureId, $surfaceId, $status);
+        } catch (\InvalidArgumentException $exception) {
+            http_response_code(422);
+            echo e($exception->getMessage());
+            return;
+        }
 
         if ($updated === null) {
             http_response_code(404);
@@ -384,27 +380,7 @@ final class AdminStructureController
             $app['config']['structures']
         );
 
-        $structure = $service->find($structureId);
-
-        if ($structure === null) {
-            http_response_code(404);
-
-            echo 'Конструкция не найдена.';
-            return;
-        }
-
-        $updated = $service->update(
-            $structureId,
-            [
-                'number' => (string) ($structure['number'] ?? ''),
-                'location_description' => (string) (
-                    $structure['location_description'] ?? ''
-                ),
-                'latitude' => $structure['latitude'] ?? '',
-                'longitude' => $structure['longitude'] ?? '',
-                'is_visible' => $isVisible,
-            ]
-        );
+        $updated = $service->update($structureId, ['is_visible' => $isVisible]);
 
         if ($updated === null) {
             http_response_code(404);
@@ -416,7 +392,7 @@ final class AdminStructureController
         header('Content-Type: application/json; charset=utf-8');
 
         echo json_encode(
-            ['success' => true],
+            ['success' => true, 'is_visible' => $updated['is_visible']],
             JSON_UNESCAPED_UNICODE
         );
     }
@@ -553,34 +529,13 @@ final class AdminStructureController
                 $app['config']['structures']
             );
 
-            $structuresFile = dirname(__DIR__, 3)
-                . '/data/structures.json';
-
-            $backupDirectory = dirname(__DIR__, 3)
-                . '/data/backups';
+            $dataDirectory = $app['config']['paths']['data'];
 
             $count = $importService->import(
                 (string) $uploadedFile['tmp_name'],
-                $structuresFile,
-                $backupDirectory
+                $dataDirectory . '/structures.json',
+                $dataDirectory . '/backups'
             );
-
-            $uploadsDirectory = rtrim(
-                (string) $app['config']['paths']['uploads'],
-                '/\\'
-            ) . '/structures';
-
-            if (is_dir($uploadsDirectory)) {
-                $files = glob($uploadsDirectory . '/*');
-
-                if ($files !== false) {
-                    foreach ($files as $file) {
-                        if (is_file($file)) {
-                            @unlink($file);
-                        }
-                    }
-                }
-            }
 
             $error = null;
             $success = 'Импорт успешно завершён. Загружено конструкций: '

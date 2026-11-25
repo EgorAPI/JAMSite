@@ -13,13 +13,12 @@ final class SettingsRepository extends JsonRepository
 
     public function update(array $data): array
     {
-        $settings = array_merge(
-            $this->get(),
-            $data
-        );
+        return $this->withWriteLock(function () use ($data): array {
+            $settings = array_merge($this->get(), $data);
 
-        $this->write($settings);
+            $this->write($settings);
 
-        return $settings;
+            return $settings;
+        });
     }
 }

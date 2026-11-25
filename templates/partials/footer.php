@@ -10,8 +10,8 @@
         src="/assets/images/logo/logo.webp"
         alt="Рекламное агентство «Джем»"
         class="site-logo__image"
-        width="300"
-        height="120"
+        width="600"
+        height="238"
     >
 </a>
                 </div>
@@ -42,7 +42,7 @@
                             </li>
 
                             <li>
-                                <a href="/contacts">
+                                <a href="/#contact-form">
                                     Контакты
                                 </a>
                             </li>

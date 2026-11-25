@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Repositories\Json;
 
 use App\Repositories\Contracts\StructureRepositoryInterface;
+use InvalidArgumentException;
 use RuntimeException;
 
 final class StructureRepository extends JsonRepository implements StructureRepositoryInterface
@@ -36,61 +37,71 @@ final class StructureRepository extends JsonRepository implements StructureRepos
 
     public function create(array $data): array
     {
-        $items = $this->all(false);
+        return $this->withWriteLock(function () use ($data): array {
+            $items = $this->read();
+            $this->ensureUnique($items, $data);
 
-        $items[] = $data;
+            $items[] = $data;
+            $this->write($items);
 
-        $this->write($items);
-
-        return $data;
+            return $data;
+        });
     }
 
     public function update(string $id, array $data): ?array
     {
-        $items = $this->all(false);
-
-        foreach ($items as $index => $item) {
-            if (($item['id'] ?? null) !== $id) {
-                continue;
-            }
-
-            $updatedItem = array_merge($item, $data);
-
-            $items[$index] = $updatedItem;
-
-            $this->write($items);
-
-            return $updatedItem;
-        }
-
-        return null;
+        return $this->updateCurrent($id, static fn (array $item): array => array_merge($item, $data));
     }
 
-    protected function write(array $data): void
+    public function updateCurrent(string $id, callable $change): ?array
     {
-        $json = json_encode(
-            $data,
-            JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR
-        );
+        return parent::updateCurrent($id, function (array $item, array $items) use ($change, $id): ?array {
+            $updated = $change($item);
+            if ($updated !== null && (
+                ($updated['number'] ?? null) !== ($item['number'] ?? null)
+                || ($updated['type'] ?? null) !== ($item['type'] ?? null)
+            )) {
+                $this->ensureUnique($items, $updated, $id);
+            }
 
-        $temporaryFile = $this->file . '.tmp';
+            return $updated;
+        });
+    }
 
-        if (file_put_contents(
-            $temporaryFile,
-            $json . PHP_EOL,
-            LOCK_EX
-        ) === false) {
-            throw new RuntimeException(
-                'Unable to write temporary structures JSON file.'
-            );
+    private function ensureUnique(array $items, array $candidate, ?string $excludedId = null): void
+    {
+        if (!isset($candidate['number'], $candidate['type'])) {
+            return;
         }
 
-        if (!rename($temporaryFile, $this->file)) {
-            @unlink($temporaryFile);
-
-            throw new RuntimeException(
-                'Unable to replace structures JSON file.'
-            );
+        foreach ($items as $item) {
+            if (
+                ($excludedId === null || ($item['id'] ?? null) !== $excludedId)
+                && (string) ($item['number'] ?? '') === (string) $candidate['number']
+                && ($item['type'] ?? null) === $candidate['type']
+            ) {
+                throw new InvalidArgumentException(
+                    'Конструкция с таким номером и типом уже существует.'
+                );
+            }
         }
+    }
+
+    public function replaceAll(array $structures, string $backupDirectory): void
+    {
+        $this->withWriteLock(function () use ($structures, $backupDirectory): void {
+            if (is_file($this->file)) {
+                $backupFile = $backupDirectory . '/structures-'
+                    . date('Y-m-d-His') . '-' . bin2hex(random_bytes(3)) . '.json';
+
+                if (!is_dir($backupDirectory) || !copy($this->file, $backupFile)) {
+                    throw new RuntimeException(
+                        'Не удалось создать резервную копию текущих конструкций.'
+                    );
+                }
+            }
+
+            $this->write($structures);
+        });
     }
 }

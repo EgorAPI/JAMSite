@@ -40,8 +40,6 @@ final class SlideRepository extends JsonRepository implements SlideRepositoryInt
     }
     public function create(array $data): array
     {
-        $items = $this->all(false);
-
         $item = [
             'id' => $data['id'],
             'image' => $data['image'],
@@ -49,47 +47,10 @@ final class SlideRepository extends JsonRepository implements SlideRepositoryInt
             'sort_order' => (int) ($data['sort_order'] ?? 0),
         ];
 
-        $items[] = $item;
-
-        $this->write($items);
-
-        return $item;
+        return $this->appendItem($item);
     }
     public function update(string $id, array $data): ?array
     {
-        $items = $this->all(false);
-
-        foreach ($items as $index => $item) {
-            if (($item['id'] ?? null) !== $id) {
-                continue;
-            }
-
-            $updatedItem = array_merge($item, $data);
-
-            $items[$index] = $updatedItem;
-
-            $this->write($items);
-
-            return $updatedItem;
-        }
-
-        return null;
-    }
-    public function delete(string $id): bool
-    {
-        $items = $this->all(false);
-
-        $filteredItems = array_values(array_filter(
-            $items,
-            fn (array $item): bool => ($item['id'] ?? null) !== $id
-        ));
-
-        if (count($filteredItems) === count($items)) {
-            return false;
-        }
-
-        $this->write($filteredItems);
-
-        return true;
+        return $this->updateCurrent($id, static fn (array $item): array => array_merge($item, $data));
     }
 }

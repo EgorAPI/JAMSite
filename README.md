@@ -4,18 +4,22 @@
 
 ## Требования
 
-- PHP 8.1+
+- PHP 8.1+ и Composer
 - Apache с `mod_rewrite` либо эквивалентные rewrite rules на другом сервере
 - DocumentRoot должен указывать на `public/`
 
 ## Локальный запуск
 
-Для быстрого smoke-test без Apache rewrite:
+Из корня проекта установите зависимости и запустите встроенный сервер PHP:
 
 ```bash
-php -S 127.0.0.1:8080 -t public public/index.php
+composer install
+php -S 127.0.0.1:8080 -t public router.php
 ```
 
+Публичный сайт доступен на `http://127.0.0.1:8080/`, вход в админку — на `http://127.0.0.1:8080/admin/login`. Для настройки приложения используйте `.env.example` как образец файла `.env`.
+
 Для production используется web-root `public/` и правила из `public/.htaccess`.
+Для сохранения данных через админку процессу PHP нужна запись в каталоги `data/` и `data/backups/`.
 
 Архитектура описана в `ARCHITECTURE.md`.
